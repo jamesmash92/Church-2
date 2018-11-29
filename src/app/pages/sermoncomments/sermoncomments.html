@@ -1,0 +1,60 @@
+      <ion-header>
+        <ion-navbar color="primary">
+          <ion-title>Sermon comments</ion-title>
+          <ion-buttons end detail-push navPush="ProfilePage" [navParams]="{profile: profile}">
+            <button ion-button icon-only color="royal">
+              <ion-icon name="chatboxes">
+                <ion-badge item-end>10</ion-badge>
+              </ion-icon>
+            </button>
+          </ion-buttons>
+            <ion-buttons end detail-push navPush="ProfilePage" [navParams]="{profile: profile}">
+              <button ion-button icon-only color="royal">
+                <ion-icon name="person-add"></ion-icon>
+              </button>
+            </ion-buttons>
+        </ion-navbar>
+      </ion-header>
+
+        <ion-content>
+          <ion-card>
+            <ion-item color="light" class="textleftwithoutpadding">
+              <ion-avatar item-start>
+                <img src="../../assets/imgs/mwicigi.jpg">
+              </ion-avatar>
+              <p item-start>Moses</p>
+              posted:<ion-datetime class="datefont" displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.timeStarts"></ion-datetime><br/>
+              <ion-datetime class="datefont" displayFormat="MMM:DD YYYY" pickerFormat="h mm A" [(ngModel)]="event.month"></ion-datetime>
+            </ion-item>
+                <p class="textleft">Father God, my heart is filled with chaos and confusion. I feel as if I am drowning in my circumstances and my heart is filled with fear and confusion. I really need the strength and peace that only You can give. Right now, I choose to rest in You. In Jesus’ Name I pray, Amen.
+                </p>
+
+            <ion-row no-padding>
+              <ion-col>
+                <button ion-button clear small color="danger" icon-start>
+                  <ion-icon name='heart'></ion-icon>
+                  Like
+                </button>
+              </ion-col>
+              <ion-col text-center>
+                <button ion-button clear small color="danger" icon-start>
+                  <ion-icon name='chatboxes'></ion-icon>
+                  comments
+                </button>
+              </ion-col>
+              <ion-col text-right>
+                <button ion-button clear small color="danger" icon-start>
+                  <ion-icon name='share-alt'></ion-icon>
+                  Share
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-content>
+
+        <ion-footer color="partial">
+          <ion-card class="rounded">
+            <ion-input color="light" type="text" placeholder="Write a comment">
+            </ion-input>
+          </ion-card>
+        </ion-footer>

@@ -1,0 +1,31 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>List of Verses</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="homecontentbackground">
+  <div class="divpadding" *ngFor="let verse of verseDataList | async">
+       <ion-item  no-lines>
+          <h2 class="textleftwithoutpadding">{{verse.bibleverse}}</h2>
+          <p class="textleftwithoutpadding">{{verse.content}}</p>
+          <ion-avatar item-start>
+            <img src="../../assets/imgs/love1.jpg">
+          </ion-avatar>
+              <ion-icon item-end name='create' color="royal" navPush="EditVerseOfTheDayPage" [navParams]="{verse: verse}"></ion-icon>
+        </ion-item>
+        <hr/>
+      </div>
+      <ion-buttons end detail-push navPush="AddVerseOfTheDayPage">
+        <button ion-button icon-only color="royal">
+          <ion-icon name="add">
+            <ion-badge item-end>Add Event</ion-badge>
+          </ion-icon>
+        </button>
+      </ion-buttons>
+
+    </ion-content>

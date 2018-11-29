@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Sermon Action Page</ion-title>
+
+  </ion-navbar>
+
+
+</ion-header>
+
+<ion-content class="homecontentbackground">
+  <div class="divpadding" *ngFor="let sermon of sermonData | async">
+       <ion-item  no-lines>
+          <h2 class="textleftwithoutpadding">{{sermon.heading}}</h2>
+          <ion-avatar item-start>
+            <img src="../../assets/imgs/love1.jpg">
+          </ion-avatar>
+              <ion-icon item-end name='create' color="royal" navPush="EditSermonPage" [navParams]="{sermon: sermon}"></ion-icon>
+        </ion-item>
+        <hr/>
+      </div>
+      <ion-buttons end detail-push navPush="PostSermonPage">
+        <button ion-button icon-only color="royal">
+          <ion-icon name="add">
+            <ion-badge item-end>Add Sermon</ion-badge>
+          </ion-icon>
+        </button>
+      </ion-buttons>
+
+    </ion-content>

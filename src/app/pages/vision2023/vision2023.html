@@ -1,0 +1,146 @@
+  <ion-header >
+  <ion-navbar color="primary">
+    <ion-title>Our Vision</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content  class="mybackground">
+    <ion-card>
+      <div>
+        <ion-thumbnail item-start>
+          <img src="../../assets/imgs/vision.jpg"></ion-thumbnail>
+        </div>
+          <ion-item>
+            <h2 class="headertext1">OUR VISION 2023</h2>
+            <hr/>
+            <p class="textcenter">Our vision is to reach as many people as possible with the Good News of Jesus Christ</p>
+            </ion-item>
+        </ion-card>
+
+      <ion-card>
+
+
+
+        <ion-segment [(ngModel)]="vision">
+          <ion-segment-button value="mission">
+            MISSION
+          </ion-segment-button>
+
+            <ion-segment-button value="2years">
+              2 YEAR
+            </ion-segment-button>
+
+            <ion-segment-button value="5years">
+              5 YEARS
+            </ion-segment-button>
+
+            <ion-segment-button value="ooc">
+              SUPPORT
+            </ion-segment-button>
+
+        </ion-segment>
+
+          <!-- The call button-->
+            <div [ngSwitch]="vision">
+              <ion-list *ngSwitchCase="'2years'" navPush="OpendevotionPage">
+                <ion-thumbnail item-start>
+                  <img style="width: 100%"  src="../../assets/imgs/dating4.jpg"></ion-thumbnail>
+                  <div class="item">
+                    <h2 class="headertext1"><strong> OUR 2 YEAR PLAN  2018 - 2020</strong></h2>
+                    <p class="textleft">Our two year plan is to have gained, discipled, trained and equipped at least 20 members. These will be the people who will be commissioned for soul winning.</p>
+                    <p class="textleft"> We also plan to have established a modern studio which will be used to produce audio,video and print content. The content will be used in outreach and soul winning across the world.</p>
+                    <p class="textleft"> We are planning to established an Online Outreach Center. The Center will be used to reach out to the online community.The Online Outreach Center will have 20 computers and 20 staff members.</p>
+
+
+                      <h2 class="headertext1"><strong>THE STAFF SHALL BE AS FOLLOWS:</strong></h2>
+                      <hr/>
+
+                      <ul class="textleft1">
+                        <li>5 Evangelists/ Pastors will be coordinating the Online Outreach Center and praying with new believers.</li>
+                        <li class="paddingli">5 counselors who will be offering guidance & counselling services to online communities.</li>
+                        <li class="paddingli">5 interpreters who will help us with interpreting major languages like Somali, Urdu, Hindi, etc.</li>
+                        <li class="paddingli">We've already reached 18 million people of different languages across the world through internet</li>
+                        <li  class="paddingli">5 call center staff who will be helping in talking with people that desires to have a Video or Voice call</li>
+                      </ul>
+                  </div>
+            </ion-list>
+            <ion-list *ngSwitchCase="'5years'">
+                <ion-thumbnail item-start>
+                  <img style="width: 100%"  src="../../assets/imgs/dating3.jpg"></ion-thumbnail>
+              <ion-item>
+                <div class="item">
+                  <h2 class="headertext1">OUR 5 YEAR PLAN 2019-2023</h2>
+                  <p class="textleft"> Our 5 year plan is:</p>
+
+                <ul class="textleft1">
+                  <li>To have a radio and & a TV station,</li>
+                  <li class="paddingli">To have evangelized, disciples, trained and equipped at least 150 people who will be sent across the world as missionaries,</li>
+                  <li class="paddingli">Establish partnership with people and organizations to raise resources to support mission work,</li>
+                  <li class="paddingli">Create different teams of professionals like doctors and send them into mission fields,</li>
+                  <li class="paddingli">To have nurtured a church of about 3000 members.</li>
+                </ul>
+              </div>
+              </ion-item>
+            </ion-list>
+
+            <ion-list *ngSwitchCase="'ooc'">
+              <ion-thumbnail item-start>
+                <img style="width: 100%"  src="../../assets/imgs/dating1.jpg"></ion-thumbnail>
+                <ion-item>
+                  <div class="item">
+                      <h2 class="headertext1">RAISING FIVE MILLION TO SET UP AN ONLINE OUTREACH CENTER</h2>
+                      <p class="item">Through this event and more events that will follow, we plan to raise resources aimed at setting up an Online Outreach Center.</p>
+
+                      <h2 class="headertext1">WHAT IS AN ONLINE OUTREACH CENTER? </h2>
+
+                      <p class="textleft">An online outreach center is a facility that will help us reach people through different internet based means like Social Media channels, Websites, YouTube, emails, podcasts, Tvs and Radios.</p>
+
+                      <h2 class="headertext1">MAIN COMPONENTS OF THE OUTREACH CENTER</h2>
+
+                      <ul class="textleft1">
+                        <li><strong>Production Studio :-</strong> The Production Studio will be equipped with the state of the art equipments. This facility will help us in developing relevant content that is in line with Soul Winning. The Production Studio will also help us to broadcast our content Live on different platforms.</li>
+                        <li class="paddingli"><strong>Cyber Center :-</strong> Cyber center will be very key in distributing the content to millions of people over the internet. It will also be very crucial in receiving feedback from millions of people across the world.</li>
+                        <li class="paddingli"><strong>Bible study Launge:-</strong> This will be a very important facility in our quest to reach the world with the loveof Jesus. We will conduct bible study from this area.</li>
+                        <li class="paddingli"><strong>Prayer Closet:-</strong> We shall have a dedicated prayer closet where people can come and pray withouth distractions.</li>
+                      </ul>
+
+
+
+                      <h2 class="headertext1">The Online Outreach Center will have 20 computers and 20 staff members as follows.</h2>
+
+                      <ul class="textleft1">
+                        <li><strong>5 Evangelists/ Pastors:-</strong>  The pastors / Evangelists will be coordinating the day to day  operations of the Online Outreach Center. They will be praying with different people when contacted including new believers.</li>
+                        <li class="paddingli"><strong>5 counselors:-</strong> counsellors will be offering guidance & counselling services to the online  community.</li>
+                        <li class="paddingli"><strong>5 interpreters:-</strong>  Interpretors will be helping with interpreting major languages like Somali, Urdu, Hindi, etc.</li>
+                        <li class="paddingli"><strong>5 call center support staff:-</strong> The call center support staff will help while talking with people through Video or  Voice call services.</li>
+                      </ul>
+                    </div>
+              </ion-item>
+            </ion-list>
+            <ion-list *ngSwitchCase="'mission'">
+              <ion-thumbnail item-start>
+                <img style="width: 100%"  src="../../assets/imgs/love3.jpg">
+              </ion-thumbnail>
+                <ion-item>
+
+                <div class="item">
+                <h2 class="headertext1">THE GOOD NEWS MISSION....</h2>
+                  <p class="textleft">Our Mission is to preach the Good News of our Lord Jesus Christ that brings salvation to every soul that hears and believes across the world.We are determined to bring souls to Christ, then teaching them, training them in the area of their gifting, and later commission them to win more souls for Jesus.</p>
+
+                  <h2 class="headertext1">We intend to use every available tool to reach out. They include:</h2>
+
+                  <ul class="textleft1">
+                    <li>Harnessing the power of the social media and using it to reach more people and in countries that are suppressing Christianity.</li>
+                    <li class="paddingli">Using our website to diseminate information to people across the world on soul winning and biblical teachings.</li>
+                    <li class="paddingli">Empowering  brethrens by training them on being effective missionaries in their societies</li>
+                    <li class="paddingli">Commisioning missionaries both locally and internationally and many more as God will enable us.</li>
+                  </ul>
+                </div>
+              </ion-item>
+            </ion-list>
+          </div>
+        </ion-card>
+      </ion-content>

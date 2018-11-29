@@ -1,0 +1,36 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Add Announcements</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label floating>Heading</ion-label>
+    <ion-input [(ngModel)]="announcements.heading"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Author Name</ion-label>
+    <ion-input [(ngModel)]="announcements.authorname"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Date</ion-label>
+    <ion-input [(ngModel)]="announcements.date1"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Time</ion-label>
+        <ion-input [(ngModel)]="announcements.time"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Content</ion-label>
+    <ion-textarea #myInput id="myInput" rows="1" maxLength="10000" (keyup)="adjust()" [(ngModel)]="announcements.content"></ion-textarea>
+  </ion-item>
+
+  <button ion-button block clear (click)="createAnnouncements()">Submit</button>
+
+
+</ion-content>

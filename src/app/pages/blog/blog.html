@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title left>My blog</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only>
+          <ion-icon name="person"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-buttons end navPush="NotificationPage">
+        <button ion-button icon-only>
+          <ion-icon name="notifications" ></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+    <ion-content class="homecontentbackground">
+      <ion-card>
+        <ion-item  class="textleft" color="light">
+        <ion-avatar item-start><img src="../../assets/imgs/mwicigi.jpg"></ion-avatar>
+        <p>{{blog.authorname}}</p>
+        <p><ion-icon name="calendar"></ion-icon> {{blog.date1}} {{blog.time}}</p>
+        <ion-icon item-end name='more' navPush="EditblogPage" [navParams]="{blog: blog}"></ion-icon>
+      </ion-item>
+        <h2 class="textleft">{{blog.heading}}</h2>
+        <ion-col item-start>
+          <img class="devotionthumbnail" src="../../assets/imgs/giving2.jpg">
+        </ion-col>
+
+        <ion-col item-end>
+          <ion-card-content class="characterspacing">
+            <p class="fontstyling"> {{blog.content}}</p>
+          </ion-card-content>
+        </ion-col>
+      <ion-row no-padding>
+        <ion-col>
+          <button ion-button clear small color="danger" icon-start>
+            <ion-icon name='heart'></ion-icon>
+            Like
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button clear small color="danger" icon-start navPush="blogcommentsPage">
+            <ion-icon name='chatboxes'></ion-icon>
+            comments
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button clear small color="danger" icon-start>
+            <ion-icon name='share-alt'></ion-icon>
+            Share
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-content>

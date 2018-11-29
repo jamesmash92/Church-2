@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>All My Devotions</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content class="homecontentbackground">
+  <div class="divpadding" *ngFor="let devotions of devotionsDataList | async">
+       <ion-item  no-lines>
+          <h2 class="textleftwithoutpadding">{{devotions.heading}}</h2>
+          <ion-avatar item-start>
+            <img src="../../assets/imgs/love1.jpg">
+          </ion-avatar>
+              <ion-icon item-end name='create' color="royal" navPush="EditMyDevotionsPage" [navParams]="{devotions: devotions}"></ion-icon>
+        </ion-item>
+        <hr/>
+      </div>
+      <ion-buttons end detail-push navPush="AddMyDevotiosToDatabasePage">
+        <button ion-button icon-only color="royal">
+          <ion-icon name="add">
+            <ion-badge item-end>Add Devotion</ion-badge>
+          </ion-icon>
+        </button>
+      </ion-buttons>
+
+    </ion-content>

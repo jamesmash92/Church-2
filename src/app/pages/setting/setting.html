@@ -1,0 +1,57 @@
+        <ion-header>
+          <ion-navbar color="primary">
+            <ion-title> Settings Page</ion-title>
+            <ion-buttons end detail-push navPush="LogtobePage" [navParams]="{profile: profile}">
+              <button ion-button icon-only color="royal">
+                <ion-icon name="lock"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-navbar>
+        </ion-header>
+
+
+        <ion-content  class="mybackground">
+          <ion-card padding *ngFor="let profile of profileData | async">
+            <ion-item class="ion-item-padding">
+                <ion-thumbnail item-start>
+                <img src="../../assets/imgs/mwicigi.jpg">
+                </ion-thumbnail>
+                  <h5 class="fontsizedate"> {{profile.firstname}} {{profile.lastname}} </h5>
+                  <p class="fontsizedate">
+                  <span><ion-icon name="clock" color="primary"></ion-icon> 9:15PM</span></p>
+                  <p class="textleft">Welcome to The Good News Mission Setting page.  </p>
+            </ion-item>
+
+            <ion-item  class="textleft" color="light">
+
+            <p>Follow the instructions in the tabs below</p>
+          </ion-item>
+            <hr/>
+            <ion-item>
+            <ion-grid padding>
+                  <ion-row>
+                    <ion-col>
+                     <ion-icon class="iconprofile" name="list"></ion-icon>
+                     <p class="labelfonts">Log</p>
+                    </ion-col>
+
+                    <ion-col navPush="ProfiledetailPage" [navParams]="{profile: profile}">
+                      <ion-icon class="iconprofile" name="eye"></ion-icon>
+                    <p class="labelfonts">View Profile</p>
+                      </ion-col>
+
+
+                    <ion-col navPush="EditprofilePage" [navParams]="{profile: profile}">
+                      <ion-icon class="iconprofile" name="paper"></ion-icon>
+                    <p class="labelfonts">Edit</p>
+                    </ion-col>
+
+                    <ion-col>
+                    <ion-icon class="iconprofile" name="key"></ion-icon>
+                     <p class="labelfonts">Password</p>
+                    </ion-col>
+                  </ion-row>
+            </ion-grid>
+          </ion-item>
+          </ion-card>
+</ion-content>

@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title left>My Verse</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only>
+          <ion-icon name="person"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-buttons end navPush="NotificationPage">
+        <button ion-button icon-only>
+          <ion-icon name="notifications" ></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+    <ion-content class="homecontentbackground">
+
+
+      <ion-card padding>
+        <ion-grid>
+          <ion-row color="partial">
+            <ion-col col-1><ion-icon name="sunny" item-left></ion-icon></ion-col>
+            <ion-col col-6><p class="paragraph"> Verse of the day</p> </ion-col>
+            <ion-col col-5> <p><strong>{{verse.date1}}</strong></p> </ion-col>
+          </ion-row>
+        </ion-grid>
+        <h2> {{verse.bibleverse}} </h2>
+        <p class="paragraph">  {{verse.content}}</p>
+
+      <ion-row no-padding>
+        <ion-col>
+          <button ion-button clear small color="danger" icon-start>
+            <ion-icon name='heart'></ion-icon>
+            Like
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button clear small color="danger" icon-start navPush="versecommentsPage">
+            <ion-icon name='chatboxes'></ion-icon>
+            comments
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button clear small color="danger" icon-start>
+            <ion-icon name='share-alt'></ion-icon>
+            Share
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-content>

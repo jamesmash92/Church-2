@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title left>My events</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only>
+          <ion-icon name="person"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-buttons end navPush="NotificationPage">
+        <button ion-button icon-only>
+          <ion-icon name="notifications" ></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+    <ion-content class="homecontentbackground">
+      <ion-card>
+        <ion-item  class="textleft" color="light">
+        <ion-avatar item-start><img src="../../assets/imgs/mwicigi.jpg"></ion-avatar>
+        <p>{{events.authorname}}</p>
+        <p><ion-icon name="calendar"></ion-icon> {{events.date1}} {{events.time}}</p>
+        <ion-icon item-end name='more' navPush="EditeventsPage" [navParams]="{events: events}"></ion-icon>
+      </ion-item>
+        <h2 class="textleft">{{events.heading}}</h2>
+        <ion-col item-start>
+          <img class="devotionthumbnail" src="../../assets/imgs/giving2.jpg">
+        </ion-col>
+
+        <ion-col item-end>
+          <ion-card-content class="characterspacing">
+            <p class="fontstyling"> {{events.content}}</p>
+          </ion-card-content>
+        </ion-col>
+      <ion-row no-padding>
+        <ion-col>
+          <button ion-button clear small color="danger" icon-start>
+            <ion-icon name='heart'></ion-icon>
+            Like
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button clear small color="danger" icon-start navPush="eventscommentsPage">
+            <ion-icon name='chatboxes'></ion-icon>
+            comments
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button clear small color="danger" icon-start>
+            <ion-icon name='share-alt'></ion-icon>
+            Share
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-content>

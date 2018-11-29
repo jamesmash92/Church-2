@@ -1,0 +1,67 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Welcome {{profile.firstname}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label >First Name:</ion-label>
+    <ion-input [(ngModel)]="profile.firstname"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>last Name:</ion-label>
+    <ion-input [(ngModel)]="profile.lastname"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>User Name:</ion-label>
+    <ion-input [(ngModel)]="profile.username"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Email:</ion-label>
+    <ion-input [(ngModel)]="profile.email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Date of Birth:</ion-label>
+    <ion-label>Year:</ion-label>
+    <ion-input [(ngModel)]="profile.year"></ion-input>
+  </ion-item>
+  <ion-item end>
+    <ion-label>Month:</ion-label>
+    <ion-input [(ngModel)]="profile.month"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Day:</ion-label>
+    <ion-input [(ngModel)]="profile.day"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Postal Address:</ion-label>
+    <ion-input [(ngModel)]="profile.postaladdress"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Postal Code:</ion-label>
+    <ion-input [(ngModel)]="profile.postalcode"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Country:</ion-label>
+    <ion-input [(ngModel)]="profile.country"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Town:</ion-label>
+    <ion-input [(ngModel)]="profile.town"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Land Mark:</ion-label>
+    <ion-input [(ngModel)]="profile.landmark"></ion-input>
+  </ion-item>
+
+  <button ion-button block (click)="SaveProfile(profile)">Save</button>
+<button ion-button block color="danger" (click)="removeProfile(profile)">Delete</button>
+
+
+</ion-content>

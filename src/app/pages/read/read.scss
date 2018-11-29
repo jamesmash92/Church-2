@@ -1,0 +1,55 @@
+
+.characterspacing{
+  letter-spacing: 0.5;
+   line-height: 1.5;
+}
+
+
+    #rounded {
+        width: 100%;
+        padding: 50px;
+        -webkit-border-radius: 50px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+    .textleftwithoutpadding{
+      overflow: inherit ;
+      text-overflow: inherit ;
+      white-space: normal;
+      text-align: left;
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+    }
+    .divpadding{
+      padding: 10px;
+    }
+    .textleft{
+      overflow: inherit ;
+      text-overflow: inherit ;
+      white-space: normal;
+      padding:10px;
+      text-align: left;
+    }
+
+      .mytextleft{text-align: left;
+      }
+      .mybackground{
+        background-color: #d49008;
+      }
+      .salutation{ padding-top: 1px;
+        padding-bottom: 1px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .greetingstext{
+        font-size: 15px;
+        text-align: left;
+        overflow: inherit ;
+        padding: 10px;
+
+      }
+    .leftside{
+      text-align: left;
+    }

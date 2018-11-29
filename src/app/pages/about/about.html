@@ -1,0 +1,94 @@
+<!--
+  Generated template for the AboutPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header >
+
+  <ion-navbar color="primary">
+    <ion-title>About Us</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content  class="mybackground">
+
+    <div>
+      <ion-thumbnail item-start>
+        <img src="../../assets/imgs/sliders/word.jpg"></ion-thumbnail>
+      </div>
+      <ion-item>
+      <h1 text-center>The Good News Mission</h1>
+      <p text-center>A missionary sending church</p>
+      <p text-center>P.O BOX 48717</p>
+      <p text-center>Nairobi, 00100, Kenya</p>
+
+    </ion-item>
+      <ion-card>
+        <ion-segment [(ngModel)]="mycalls">
+            <ion-segment-button value="call">
+              Call
+            </ion-segment-button>
+
+            <ion-segment-button value="mission">
+              Mission
+            </ion-segment-button>
+
+            <ion-segment-button value="vision">
+              Vision
+            </ion-segment-button>
+            <ion-segment-button value="about">
+              About
+            </ion-segment-button>
+        </ion-segment>
+
+          <!-- The call button-->
+          <div [ngSwitch]="mycalls">
+            <ion-list *ngSwitchCase="'call'" navPush="OpendevotionPage">
+              <ion-item>
+                <ion-thumbnail item-start>
+                  <img src="../../assets/imgs/mwicigi.jpg">
+                </ion-thumbnail>
+                <h2>Contact with us through:</h2>
+                <p class="item">+254727891989</p>
+                <p class="item">+254739679730</p>
+                <p class="item">pastor@thegoodnewsmission.org</p>
+              </ion-item>
+            </ion-list>
+
+          <!-- The call button-->
+              <ion-list *ngSwitchCase="'mission'">
+              <ion-item>
+                <h2 class="headertext">Our Mission is...</h2>
+                <p class="textleft"> Our Mission is to preach the Good News of our Lord Jesus Christ that brings salvation to every soul that hears and believes across the world.We are determined to bring souls to Christ, then teaching them, training them in the area of their gifting, and later commission them to win more souls for Jesus.</p>
+              </ion-item>
+            </ion-list>
+
+            <ion-list *ngSwitchCase="'vision'">
+              <ion-item>
+                <h2 class="headertext">Our Vision is...</h2>
+                <p class="textleft">Our Vision is to go out into the rippen world and win more souls for Jesus. We intend to reverage on any available tool may it be: - Technology, people, corporation and/or airwaves etc; to reach out to people across the world.We are giving more emphasy to countries like Somalia, Pakstan, India, Muslim Countries etc.</p>
+              </ion-item>
+            </ion-list>
+
+            <ion-list *ngSwitchCase="'about'">
+              <ion-item>
+                <h2 class="headertext">The Good News Mission....</h2>
+                  <p class="textleft">is a dynamic, multicultural community, missionary sending Church. The church offers relevant teachings and amazing worship as part of each and every Sunday Worship Gathering. Usually around 120 minutes long, our services feature something for everyone.</p>
+                </ion-item>
+            </ion-list>
+          </div>
+        </ion-card>
+
+        <ion-card>
+            <ion-list text-center>
+              <h2 class="item">Map Direction to Church</h2>
+            </ion-list>
+
+        <div class="item">
+          <img src="../../assets/imgs/map.png">
+        </div>
+      </ion-card>
+</ion-content>

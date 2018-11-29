@@ -1,0 +1,377 @@
+          <ion-header>
+            <ion-toolbar color="primary">
+              <ion-title start>Ibada</ion-title>
+                <ion-buttons end detail-push navPush="DetailPage">
+                  <button ion-button icon-only color="royal">
+                    <ion-icon name="chatbubbles">
+                      <ion-badge item-end>5</ion-badge>
+                    </ion-icon>
+                  </button>
+                </ion-buttons>
+                <ion-buttons end detail-push navPush="DefaultPage" [navParams]="{default: default}">
+                  <button ion-button icon-only color="royal">
+                    <ion-icon name="person-add"></ion-icon>
+                  </button>
+                </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
+
+
+          <ion-content class="mybackground">
+            <div>
+              <ion-thumbnail item-start>
+                <img src="../../assets/imgs/sliders/word.jpg">
+              </ion-thumbnail>
+            </div>
+
+          <ion-card>
+              <ion-item no-lines *ngFor="let profile of (profileData | async)?.slice().reverse()">
+                <p class="headertext"> Dear<strong> {{profile.firstname}} {{profile.lastname}}</strong><br/>
+                  Welcome to</p>
+                  <h1 class="headertext"> The Good News Mission </h1>
+                  <p class="mytextcenter">A Missionary Sending church</p>
+                  <hr/>
+                  <p class="textleft">I am so happy to see you again <strong>{{profile.firstname}}</strong>. I can assure you that you will be blessed a lot as you explore our Ibada App. <br/><br/>
+                    <strong>~ Pastor Moses Mwicigi~</strong> </p>
+                </ion-item>
+            </ion-card>
+
+
+            <ion-card>
+              <ion-item color="partial" text-center >
+                <ion-icon name="arrow-dropleft" item-left></ion-icon> Verse of the Day <ion-icon item-right name="arrow-dropright"></ion-icon>
+                  </ion-item>
+                    <ion-slides>
+                      <ion-slide *ngFor="let verse of (verseDataList  | async)?.slice().reverse()"
+                        detail-push navPush="VerseOfTheDayPage" [navParams]="{verse:verse}">
+                        <ion-grid>
+                          <ion-row color="partial">
+                            <ion-col col-1><ion-icon name="sunny" item-left></ion-icon></ion-col>
+                            <ion-col col-5><p class="paragraph"> Verse of the day</p> </ion-col>
+                            <ion-col col-6> <p><strong>{{verse.date1}}</strong></p> </ion-col>
+                          </ion-row>
+                        </ion-grid>
+                        <h2> {{verse.bibleverse}} </h2>
+                        <p class="textleft"> {{verse.content}}</p>
+                      </ion-slide>
+                    </ion-slides>
+                </ion-card>
+
+                <ion-card>
+                  <ion-item color="partial" text-center >
+                    <ion-icon name="arrow-dropleft" item-left></ion-icon> Read Our Sermon <ion-icon item-right name="arrow-dropright"></ion-icon>
+                  </ion-item>
+                  <ion-slides>
+                    <ion-slide *ngFor="let sermon of (sermonData | async)?.slice().reverse()"
+                    detail-push navPush="SermonPage" [navParams]="{sermon:sermon}">
+                    <ion-row>
+                      <ion-col class="textleft">
+                        <div>
+                          <ion-thumbnail item-start>
+                            <img style="width: 100%; "  src="../../assets/imgs/dating.jpg"></ion-thumbnail>
+                          </div>
+                          <h2 style="padding-top:10px;padding-bottom:10px"><strong>{{sermon.heading}}</strong><br/> <ion-icon style="float:right" name="arrow-dropright"></ion-icon><ion-note item-right>
+                          {{sermon.date1}} {{sermon.time}}
+                          </ion-note></h2>
+                          <p>{{sermon.content | slice:0:160}}...<span color="secondary">Read More</span></p>
+                        </ion-col>
+                      </ion-row>
+                      <ion-row>
+                        <ion-col>
+                          <button ion-button icon-left clear small color="danger">
+                            <ion-icon name="thumbs-up"></ion-icon>
+                            <div>12 Like</div>
+                          </button>
+                        </ion-col>
+                        <ion-col>
+                          <button ion-button clear small color="danger" icon-start>
+                            <ion-icon name='heart'></ion-icon>
+                            Love
+                          </button>
+                        </ion-col>
+                        <ion-col>
+                          <button ion-button icon-left clear small color="danger">
+                            <ion-icon name="text"></ion-icon>
+                            <div>4 Comments</div>
+                          </button>
+                        </ion-col>
+                      </ion-row>
+                    </ion-slide>
+                  </ion-slides>
+                </ion-card>
+
+<!--Connect with friends-->
+                <ion-card >
+                  <ion-item color="partial" text-center>
+                    Become a friend....
+                  </ion-item>
+                  <ion-slides>
+                    <ion-slide>
+                      <ion-item>
+                        <ion-grid>
+                          <h4>Pastor Moses Mwicigi</h4>
+                          <ion-row>
+                            <ion-col col-5>
+                              <div>
+                                <ion-thumbnail item-start>
+                                  <img style="width: 100%;border-radius:20px"  src="../../assets/imgs/mwicigi.jpg"></ion-thumbnail>
+                                </div>
+                                <p>1 Mutual Friend</p>
+                                <button ion-button color="secondary" clear>Add</button>
+                            </ion-col>
+
+                            <ion-col col-7 class="textleft">
+                              <p><strong>Nationality:</strong> Kenyan</p>
+                              <p><strong>Marital status:</strong> Married to Jackline Mwicigi</p>
+                              <p class="paragraph"> I am a pastor at The Good News Mission, A husband and an investor.</p>
+                              <button ion-button color="secondary" clear end>Remove</button>
+                            </ion-col>
+                          </ion-row>
+                        </ion-grid>
+                      </ion-item>
+                    </ion-slide>
+
+                    <ion-slide>
+                      <ion-item>
+                        <ion-grid>
+                          <h4><strong>Jackline Njeri</strong></h4>
+                          <ion-row>
+                            <ion-col col-5>
+                              <div>
+                                <ion-thumbnail item-start>
+                                  <img style="width: 100%; border-radius:20px"  src="../../assets/imgs/love1.jpg"></ion-thumbnail>
+                                </div>
+                                <p>1 Mutual Friend</p>
+                                <button ion-button color="secondary" clear>Add</button>
+                            </ion-col>
+
+                            <ion-col col-7 class="textleft">
+                              <p><strong>Nationality:</strong> Kenyan</p>
+                              <p><strong>Marital status:</strong> Married</p>
+                              <p class="paragraph">I am married to is the wife to the senior Pastor at The Good News ministry International. </p>
+                              <button ion-button color="secondary" clear end>Remove</button>
+                            </ion-col>
+                          </ion-row>
+                        </ion-grid>
+                      </ion-item>
+                    </ion-slide>
+                  </ion-slides>
+                </ion-card>
+
+          <!--End Connect with friends-->
+
+
+                <ion-item color="partial" text-center>
+                  News & Events
+                </ion-item>
+                <ion-card>
+                  <ion-slides>
+                    <ion-slide *ngFor="let announcements of (announcementsDataList | async)?.slice().reverse()" detail-push navPush="AnnouncementsPage" [navParams]="{announcements:announcements}">
+                      <ion-item text-center>
+                        <h2>{{announcements.heading}}</h2>
+                      </ion-item>
+                      <hr/>
+                      <div>
+                        <ion-thumbnail item-start>
+                          <img style="width: 100%"  src="../../assets/imgs/tgnm.png"></ion-thumbnail>
+                        </div>
+                        <ion-card-content class="mytextleft">
+                          <p>{{announcements.content | slice:0:119 }}</p>
+                        </ion-card-content>
+                        <ion-row>
+                          <ion-col>
+                            <button ion-button icon-left clear small color="danger">
+                              <ion-icon name="thumbs-up"></ion-icon>
+                              <div>12 Like</div>
+                            </button>
+                          </ion-col>
+                          <ion-col>
+                            <button ion-button clear small color="danger" icon-start>
+                              <ion-icon name='heart'></ion-icon>
+                              Love
+                            </button>
+                          </ion-col>
+                          <ion-col>
+                            <button ion-button icon-left clear small color="danger">
+                              <ion-icon name="text"></ion-icon>
+                              <div>4 Comments</div>
+                            </button>
+                          </ion-col>
+                        </ion-row>
+                      </ion-slide>
+                    </ion-slides>
+                  </ion-card>
+
+
+                  <ion-card>
+                    <ion-item color="partial" text-center >
+                     <ion-icon name="arrow-dropleft" item-left></ion-icon> Read Our Blogs <ion-icon item-right name="arrow-dropright"></ion-icon>
+                    </ion-item>
+                    <ion-slides>
+                      <ion-slide *ngFor="let blog of (blogDataList | async)?.slice().reverse()" detail-push navPush="BlogPage" [navParams]="{blog:blog}">
+                        <ion-row>
+                          <ion-col class="textleft">
+                            <div>
+                              <ion-thumbnail item-start>
+                                <img style="width: 100%"  src="../../assets/imgs/dating2.jpg"></ion-thumbnail>
+                              </div>
+                              <h2 style="padding-top:10px;padding-bottom:10px"><strong>{{blog.heading}}</strong><br/> <ion-icon style="float:right" name="arrow-dropright"></ion-icon><ion-note item-right>
+                              {{blog.date1}} {{blog.time}}
+                              </ion-note></h2>
+                              <p>{{blog.content | slice:0:160}}...<span color="secondary">Read More</span></p>
+                            </ion-col>
+                          </ion-row>
+                          <ion-row>
+                            <ion-col>
+                              <button ion-button icon-left clear small color="danger">
+                                <ion-icon name="thumbs-up"></ion-icon>
+                                <div>12 Like</div>
+                              </button>
+                            </ion-col>
+                            <ion-col>
+                              <button ion-button clear small color="danger" icon-start>
+                                <ion-icon name='heart'></ion-icon>
+                                Love
+                              </button>
+                            </ion-col>
+                            <ion-col>
+                              <button ion-button icon-left clear small color="danger">
+                                <ion-icon name="text"></ion-icon>
+                                <div>4 Comments</div>
+                              </button>
+                            </ion-col>
+                          </ion-row>
+                        </ion-slide>
+                      </ion-slides>
+                    </ion-card>
+
+                  <ion-card>
+                    <ion-item>
+                      <ion-avatar item-start>
+                        <img src="../../assets/imgs/mwicigi.jpg">
+                      </ion-avatar>
+                      <h2>Moses Mwicigi</h2>
+                      <p>May 10th 2018</p>
+
+                    </ion-item>
+                    <div>
+                      <ion-thumbnail item-start>
+                        <img src="../../assets/imgs/mwicigi.jpg"></ion-thumbnail>
+                      </div>
+
+                      <ion-card-content>
+                        <p>The Lord is my strength and shield. I trust him with all my heart. He helps me, and my heart is filled with joy. I burst out in songs of thanksgiving.</p>
+                      </ion-card-content>
+
+                      <ion-row>
+                        <ion-col>
+                          <button ion-button icon-left clear small>
+                            <ion-icon name="thumbs-up"></ion-icon>
+                            <div>12 Likes</div>
+                          </button>
+                        </ion-col>
+                        <ion-col>
+                          <button ion-button icon-left clear small>
+                            <ion-icon name="text"></ion-icon>
+                            <div>4 Comments</div>
+                          </button>
+                        </ion-col>
+                        <ion-col center text-center>
+                          <ion-note>
+                            11h ago
+                          </ion-note>
+                        </ion-col>
+                      </ion-row>
+                    </ion-card>
+
+                      <ion-card >
+                        <ion-item color="partial" text-center>
+                          Watch our Video
+                        </ion-item>
+                        <ion-slides>
+                          <ion-slide>
+                            <ion-row>
+                              <ion-col col-6>
+                                <div>
+                                  <ion-thumbnail item-start>
+                                    <img (click)="gotovideopage()" style="width: 100%"  src="../../assets/imgs/love2.jpg" ></ion-thumbnail>
+                                  </div>
+                                  <p>Giving is an act of worship Part 1</p>
+                                  <button ion-button block (click)="gotovideopage()"> Play Video</button>
+                                </ion-col>
+
+                                <ion-col col-6>
+                                  <div>
+                                    <ion-thumbnail item-start>
+                                      <img (click)="playVideo()" style="width: 100%"  src="../../assets/imgs/love3.jpg" ></ion-thumbnail>
+                                    </div>
+                                    <p>Let build the Online Outreach Center</p>
+                                    <button ion-button block (click)="gotovideopage()"> Play Video</button>
+                                  </ion-col>
+                                </ion-row>
+                              </ion-slide>
+                              <ion-slide>
+                                <ion-row>
+                                  <ion-col col-6>
+                                    <div>
+                                      <ion-thumbnail item-start>
+                                        <img (click)="playVideo()" style="width: 100%"  src="../../assets/imgs/dating1.jpg" ></ion-thumbnail>
+                                      </div>
+                                      <p>Giving is an act of worship Part 1</p>
+                                      <button ion-button (click)="playVideo()"> Play Video</button>
+                                    </ion-col>
+
+                                    <ion-col col-6>
+                                      <div>
+                                        <ion-thumbnail item-start>
+                                          <img (click)="playVideo()" style="width: 100%"  src="../../assets/imgs/dating.jpg" ></ion-thumbnail>
+                                        </div>
+                                        <p>Let build the Online Outreach Center</p>
+                                        <button ion-button block (click)="playVideo()"> Play Video</button>
+                                      </ion-col>
+                                    </ion-row>
+                                  </ion-slide>
+
+                                  <ion-slide>
+                                    <ion-row>
+                                      <ion-col col-6>
+                                        <div>
+                                          <ion-thumbnail item-start>
+                                            <img (click)="playVideo()" style="width: 100%"  src="../../assets/imgs/dating3.jpg" ></ion-thumbnail>
+                                          </div>
+                                          <p>Giving is an act of worship Part 1</p>
+                                          <button ion-button (click)="playVideo()"> Play Video</button>
+                                        </ion-col>
+
+                                        <ion-col col-6>
+                                          <div>
+                                            <ion-thumbnail item-start>
+                                              <img (click)="playVideo()" style="width: 100%"  src="../../assets/imgs/dating.jpg" ></ion-thumbnail>
+                                            </div>
+                                            <p>Let build the Online Outreach Center</p>
+                                            <button ion-button block (click)="playVideo()"> Play Video</button>
+                                          </ion-col>
+                                        </ion-row>
+                                      </ion-slide>
+                                    </ion-slides>
+                                  </ion-card>
+
+
+                                  <ion-card>
+                                    <ion-card-header text-center> Our Events</ion-card-header>
+                                    <hr/>
+                                    <ion-slides>
+                                      <ion-slide col-6 *ngFor="let events of (eventsDataList | async)?.slice().reverse()" detail-push navPush="EventsPage" [navParams]="{events:events}">
+                                          <ion-row>
+                                            <ion-col class="textleft">
+                                              <div>
+                                                <ion-thumbnail item-start>
+                                                  <img style="width: 100%"  src="../../assets/imgs/dating3.jpg"></ion-thumbnail>
+                                                </div>
+                                                <p>{{events.heading}}</p>
+                                              </ion-col>
+                                            </ion-row>
+                                          </ion-slide>
+                                        </ion-slides>
+                                      </ion-card>
+                                    </ion-content>

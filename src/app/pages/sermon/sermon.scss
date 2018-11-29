@@ -1,0 +1,34 @@
+
+.rounded {
+    width: 100%;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow-wrap: break-word;
+}
+.textcenter{
+  overflow: inherit ;
+  text-overflow: inherit ;
+  white-space: normal;
+  text-align: center;
+  padding: 10px;
+}
+.textleft{
+  overflow: inherit ;
+  white-space: normal;
+  text-align: left;
+  padding: 0px;
+  line-height: 2.1em;
+
+
+}
+.headertext{
+  overflow: inherit ;
+  white-space: normal;
+  text-align: left;
+  padding: 5px;
+  font-size: 15px;
+}

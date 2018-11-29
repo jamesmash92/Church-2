@@ -1,0 +1,231 @@
+            <ion-header>
+              <ion-toolbar color="primary">
+              <ion-title>My Plans</ion-title>
+                <ion-buttons end detail-push navPush="ProfilePage" [navParams]="{profile: profile}">
+                  <button ion-button icon-only color="royal">
+                    <ion-icon name="person-add"></ion-icon>
+                  </button>
+                </ion-buttons>
+              </ion-toolbar>
+            </ion-header>
+
+              <ion-content class="mybackground">
+                <ion-card>
+                  <ion-segment [(ngModel)]="devotions">
+                    <ion-segment-button value="mydevotions">
+                      My Devotions
+                    </ion-segment-button>
+                    <ion-segment-button value="otherdevotions">
+                      Other Devotions
+                    </ion-segment-button>
+                  </ion-segment>
+
+                  <div [ngSwitch]="devotions">
+                  <ion-card *ngSwitchCase="'mydevotions'" navPush="OpendevotionPage">
+                    <ion-item>
+                      <ion-thumbnail item-start>
+                        <img src="../../assets/imgs/love1.jpg">
+                      </ion-thumbnail>
+                      <h2 class="headertext">Love God greatly</h2>
+                      <p class="textleft">Introducing the youth to the word of God.Introducing the youth to the word of God.</p>
+                      <button ion-button outline round>Read this Devotion</button>
+                    </ion-item>
+                  </ion-card>
+
+                  <ion-card *ngSwitchCase="'mydevotions'" navPush="OpendevotionPage">
+                    <ion-item>
+                      <h2 class="headertext">The youth and the church</h2>
+                      <ion-thumbnail item-start>
+                        <img src="../../assets/imgs/dating.jpg">
+                      </ion-thumbnail>
+                      <p class="textleft">Introducing the youth to the word of God.Introducing the youth to the word of God.</p>
+                      <button ion-button outline round>Read this Devotion</button>
+                    </ion-item>
+                  </ion-card>
+
+
+                  <ion-card *ngSwitchCase="'mydevotions'">
+                    <ion-item>
+                      <ion-thumbnail item-start>
+                        <img src="../../assets/imgs/love2.jpg">
+                      </ion-thumbnail>
+                      <h2 headertext>The Rock of Christian Marriage</h2>
+                      <p class="textleft"> One year Bible study about marriages</p>
+                      <button ion-button outline round>Read this Devotion</button>
+                    </ion-item>
+                  </ion-card>
+
+
+                  <ion-card *ngSwitchCase="'mydevotions'">
+                    <ion-item>
+                      <ion-thumbnail item-start>
+                        <img src="../../assets/imgs/love3.jpg">
+                      </ion-thumbnail>
+                      <h2>Overcomming The World</h2>
+                      <p class="textleft">Finding the purpose of our existence in God</p>
+                      <button ion-button outline round>Read this Devotion</button>
+                    </ion-item>
+                  </ion-card>
+
+
+                  <ion-card *ngSwitchCase="'mydevotions'">
+                    <ion-item>
+                      <ion-thumbnail item-start>
+                        <img src="../../assets/imgs/dating.jpg">
+                      </ion-thumbnail>
+                      <h2>Daily Devotion</h2>
+                      <p class="textleft">Be encouraged each day by the word of God</p>
+                      <button ion-button outline round>Read this Devotion</button>
+                    </ion-item>
+                  </ion-card>
+              </div>
+
+              <div [ngSwitch]="devotions">
+                <ion-list *ngSwitchCase="'otherdevotions'">
+                  <ion-card>
+                    <ion-item color="partial" text-center >
+                     <ion-icon name="arrow-dropleft" item-left></ion-icon> Worship<ion-icon item-right name="arrow-dropright"></ion-icon>
+                    </ion-item>
+
+                    <ion-slides>
+                      <!--Start of Worship-->
+                      <ion-slide >
+                        <ion-card-header>Seeking God in Worship</ion-card-header>
+                        <ion-thumbnail item-start>
+                          <img src="../../assets/imgs/love3.jpg"></ion-thumbnail>
+                          <p class="textleft">God is mysterious, eternal, immortal, invisible, the only God. Our lives, however, can become mundane, tedious, and cold. This 8-day study will renew your reverent awe toward our Creator, and inspire your worship to become more profound, spontaneous, and authentic.</p>
+                        </ion-slide>
+
+                        <ion-slide >
+                          <ion-card-header>Salvation Rise</ion-card-header>
+                          <ion-thumbnail item-start>
+                            <img src="../../assets/imgs/love1.jpg"></ion-thumbnail>
+                            <p class="textleft">Salvation Rise takes a closer look at the Scripture that inspired the songs on NewSpring Worship's latest album. Written for new Christians, this 10-day study is a celebration of who God is, what He's done, and all He has in store for us next. </p>
+                          </ion-slide>
+
+                          <ion-slide >
+                            <ion-card-header>Elevation Worship - Wake Up The Wonder</ion-card-header>
+                            <ion-thumbnail item-start>
+                              <img src="../../assets/imgs/love2.jpg"></ion-thumbnail>
+                              <p class="textleft">Based out of Elevation Church led by Pastor Steven Furtick, Elevation Worship write and record songs that reflect the church's journey, experiences and needs. Through these 7 days of The Overflow devotional, we'll dive deeper into the passion behind the album Wake Up The Wonder - songs that are a prayer for the church and a prayer for revival.</p>
+                            </ion-slide>
+
+                            <ion-slide >
+                              <ion-card-header>Living Worship</ion-card-header>
+                              <ion-thumbnail item-start>
+                                <img src="../../assets/imgs/dating2.jpg"></ion-thumbnail>
+                                <p class="textleft">This is a devotional that will help you apply Biblical truths about worship to your daily life. We often forget what worship is and the impact true worship can have on our lives. Take time to let your worship come alive again.</p>
+                              </ion-slide>
+
+                          <!--End of Worship-->
+                      </ion-slides>
+                    </ion-card>
+                  </ion-list>
+
+
+                  <ion-list *ngSwitchCase="'otherdevotions'">
+                    <ion-card>
+                      <ion-item color="partial" text-center >
+                       <ion-icon name="arrow-dropleft" item-left></ion-icon> Easter <ion-icon item-right name="arrow-dropright"></ion-icon>
+                      </ion-item>
+                      <ion-slides>
+                        <ion-slide >
+                          <ion-card-header>Becoming a Winner the God's way</ion-card-header>
+                          <ion-thumbnail item-start>
+                            <img src="../../assets/imgs/love1.jpg"></ion-thumbnail>
+                            <p class="textleft">Our Daily Bread devotionals are read by millions of people around the world and encourages people tospend their time with God.</p>
+                          </ion-slide>
+                        </ion-slides>
+                      </ion-card>
+                    </ion-list>
+
+
+
+                    <ion-list *ngSwitchCase="'otherdevotions'">
+                      <ion-card>
+                        <ion-item color="partial" text-center >
+                         <ion-icon name="arrow-dropleft" item-left></ion-icon> Love <ion-icon item-right name="arrow-dropright"></ion-icon>
+                        </ion-item>
+
+                        <ion-slides>
+                          <!--Start of Love slides-->
+
+                          <ion-slide >
+                            <ion-card-header>Demonstrating God's Love In Business</ion-card-header>
+                            <ion-thumbnail item-start>
+                              <img src="../../assets/imgs/love2.jpg"></ion-thumbnail>
+                              <p class="textleft">Kingdom entrepreneurs have the unique opportunity to represent God’s love in the marketplace and minister into the lives of people who may otherwise not encounter the radical love of Jesus Christ. This 4-day reading plan provides scripture and guidance for demonstrating God’s love through the work you do as a business owner.</p>
+                            </ion-slide>
+
+                            <ion-slide >
+                              <ion-card-header>Being Loved By God</ion-card-header>
+                              <ion-thumbnail item-start>
+                                <img src="../../assets/imgs/love1.jpg"></ion-thumbnail>
+                                <p class="textleft">What is in the way of our belief that God loves us? Healing the heart is our Father’s first imperative work and our introduction to training. Training? Yes, training, learning how to experience being a Beloved Son. In the midst of battle, the enemy counts on a man never experiencing that he is a Beloved Son. Join us on the journey to belovedness.</p>
+                              </ion-slide>
+
+                              <ion-slide >
+                                <ion-card-header>Uncommen Love Is….</ion-card-header>
+                                <ion-thumbnail item-start>
+                                  <img src="../../assets/imgs/dating.jpg"></ion-thumbnail>
+                                  <p class="textleft">Love is a lot of things, but what specifically does scripture tell us about love? If you’re looking for a new way to approach your relationships, this study of 1 Corinthians: 13 is a great place to start. Find out how God wants us to treat others.</p>
+                                </ion-slide>
+
+                                <ion-slide padding>
+                                  <ion-card-header>Love Defined</ion-card-header>
+                                  <ion-thumbnail item-start>
+                                    <img src="../../assets/imgs/love3.jpg"></ion-thumbnail>
+                                    <p class="textleft">If there’s one thing we have learned over years of dating, break-ups, prayers, waiting, and (for Kristen) marriage, it’s this: romantic relationships are complicated. Those charming princess movies we watched as kids didn’t do us any favors as we grew older. Can you relate? Whatever season of life you’re in, we pray this week-long devotional will help you discover God’s vision for lasting relationship. Because love was God’s idea in the first place!</p>
+                                  </ion-slide>
+
+                            <!--End of love sliders-->
+
+                          </ion-slides>
+                        </ion-card>
+                      </ion-list>
+
+
+
+                      <ion-list *ngSwitchCase="'otherdevotions'">
+                        <ion-card padding>
+                          <ion-item color="partial" text-center >
+                           <ion-icon name="arrow-dropleft" item-left></ion-icon> Dating <ion-icon item-right name="arrow-dropright"></ion-icon>
+                          </ion-item>
+
+                          <ion-slides>
+                            <!--Start of dating slide-->
+                            <ion-slide >
+                              <ion-card-header>Dating in Modern Age</ion-card-header>
+                              <ion-thumbnail item-start>
+                                <img src="../../assets/imgs/dating.jpg"></ion-thumbnail>
+                                <p class="textleft">Dating . . . does the word strike anxiety or anticipation in your heart? With all the tech connectivity, it seems that it’s just made dating more complicated, confusing and frustrating than ever before. In this 7-day reading plan based on Single. Dating. Engaged. Married.</p>
+                              </ion-slide>
+
+                              <ion-slide >
+                                <ion-card-header>Getting ready for Marriage</ion-card-header>
+                                <ion-thumbnail item-start>
+                                  <img src="../../assets/imgs/dating3.jpg"></ion-thumbnail>
+                                  <p class="textleft">Taken from their book "Getting Ready for Marriage," join relationship experts Jim Burns and Doug Fields as they help you start planning now for your lasting union. Finances, in-laws, communication, forgiveness, sexual expectations, no topic is off-limits as you and your fiancé get ready to step from engagement into a life-long covenant to each other.</p>
+                                </ion-slide>
+
+                                <ion-slide >
+                                  <ion-card-header>Dating Manifesto</ion-card-header>
+                                  <ion-thumbnail item-start>
+                                    <img src="../../assets/imgs/dating2.jpg"></ion-thumbnail>
+                                    <p class="textleft">Still single, even though you'd rather be married? So is Lisa Anderson, host of the Boundless podcast. In her typical humor-filled style, she offers great Biblical insight and encouragement pulled straight from her new book, The Dating Manifesto.</p>
+                                  </ion-slide>
+
+                                  <ion-slide >
+                                    <ion-card-header>Dating with Purpose</ion-card-header>
+                                    <ion-thumbnail item-start>
+                                      <img src="../../assets/imgs/dating4.jpg"></ion-thumbnail>
+                                      <p class="textleft">How do you find lasting love? And once you find someone, how do you date well so that love will last? Single Christian men and women around the world report they are seeking authentic Christian partners with whom they can share their life, but are a bit confused about the purpose of marriage, and therefore, the purpose of dating. This plan will systematically address each of these from a Biblical perspective. </p>
+                                    </ion-slide>
+
+                              <!--End of dating slide-->
+                            </ion-slides>
+                          </ion-card>
+                        </ion-list>
+                      </div>
+                    </ion-card>
+        </ion-content>

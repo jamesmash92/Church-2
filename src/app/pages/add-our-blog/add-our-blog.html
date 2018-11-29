@@ -1,0 +1,36 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Add Devotion</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label floating>Heading</ion-label>
+    <ion-input [(ngModel)]="blog.heading"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Author Name</ion-label>
+    <ion-input [(ngModel)]="blog.authorname"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Date</ion-label>
+    <ion-input [(ngModel)]="blog.date1"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Time</ion-label>
+        <ion-input [(ngModel)]="blog.time"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Content</ion-label>
+    <ion-textarea #myInput id="myInput" rows="1" maxLength="10000" (keyup)="adjust()" [(ngModel)]="blog.content"></ion-textarea>
+  </ion-item>
+
+  <button ion-button block clear (click)="createBlog()">Submit</button>
+
+
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Our blog</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="homecontentbackground">
+  <div class="divpadding" *ngFor="let blog of blogDataList | async">
+       <ion-item  no-lines>
+          <h2 class="textleftwithoutpadding">{{blog.heading}}</h2>
+          <ion-avatar item-start>
+            <img src="../../assets/imgs/love1.jpg">
+          </ion-avatar>
+              <ion-icon item-end name='create' color="royal" navPush="EditOurBlogPage" [navParams]="{blog: blog}"></ion-icon>
+        </ion-item>
+        <hr/>
+      </div>
+      <ion-buttons end detail-push navPush="AddOurBlogPage">
+        <button ion-button icon-only color="royal">
+          <ion-icon name="add">
+            <ion-badge item-end>Add Blog</ion-badge>
+          </ion-icon>
+        </button>
+      </ion-buttons>
+
+    </ion-content>

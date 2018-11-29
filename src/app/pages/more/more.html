@@ -1,0 +1,36 @@
+
+<ion-header>
+  <ion-toolbar color="primary">
+  <ion-title>My Plans</ion-title>
+    <ion-buttons end detail-push navPush="ProfilePage" [navParams]="{profile: profile}">
+      <button ion-button icon-only color="royal">
+        <ion-icon name="person-add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+  <ion-content>
+    <ion-list lines>
+      <button ion-item navPush="YouthMinistryPage">
+        Youth Ministry
+      </button>
+      <button ion-item navPush="PrayerWallPage">
+        Prayer Wall
+      </button>
+      <button ion-item navPush="GivePage">
+        Give
+      </button>
+    <!--  <button ion-item navPush="BiblePage">
+        Bible
+      </button>-->
+      <button ion-item navPush="Vision2023Page">
+        Vision 2023
+      </button>
+
+      <button ion-item navPush="AboutPage">
+        About Us
+      </button>
+    </ion-list>
+  </ion-content>

@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Our announcements</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="homecontentbackground">
+  <div class="divpadding" *ngFor="let announcements of announcementsDataList | async">
+       <ion-item  no-lines>
+          <h2 class="textleftwithoutpadding">{{announcements.heading}}</h2>
+          <ion-avatar item-start>
+            <img src="../../assets/imgs/love1.jpg">
+          </ion-avatar>
+              <ion-icon item-end name='create' color="royal" navPush="EditOurAnnouncementsPage" [navParams]="{announcements: announcements}"></ion-icon>
+        </ion-item>
+        <hr/>
+      </div>
+      <ion-buttons end detail-push navPush="AddOurAnnouncementsPage">
+        <button ion-button icon-only color="royal">
+          <ion-icon name="add">
+            <ion-badge item-end>Add announcements</ion-badge>
+          </ion-icon>
+        </button>
+      </ion-buttons>
+
+    </ion-content>

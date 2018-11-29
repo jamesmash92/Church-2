@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar color="primary">
+  <ion-title>Add Sermon</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label floating>Heading</ion-label>
+    <ion-input [(ngModel)]="sermon.heading"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Author Name</ion-label>
+    <ion-input [(ngModel)]="sermon.authorname"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Date</ion-label>
+    <ion-input [(ngModel)]="sermon.date1"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Time</ion-label>
+    <ion-input [(ngModel)]="sermon.time"></ion-input>
+  </ion-item>
+
+    <ion-item>
+      <label class="item item-input"> <input type="file" id="upimgfile" name="uploadfile" ng-model="sermon.uploadfile">
+      </label>
+      <div class="preview-img"> <img id="myImage" width="150" height="150"  size="30" /> </div>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Content</ion-label>
+    <ion-textarea #myInput id="myInput" rows="1" maxLength="10000" (keyup)="adjust()" [(ngModel)]="sermon.content"></ion-textarea>
+  </ion-item>
+
+  <button ion-button block clear (click)="createsermon()">Submit</button>
+
+</ion-content>

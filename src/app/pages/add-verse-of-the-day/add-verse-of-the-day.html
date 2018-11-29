@@ -1,0 +1,32 @@
+
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Todays Verse</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label floating>Bible Verse</ion-label>
+    <ion-input [(ngModel)]="verse.bibleverse"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Date</ion-label>
+    <ion-input [(ngModel)]="verse.date1"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Content</ion-label>
+    <ion-textarea #myInput id="myInput" rows="1" maxLength="10000" (keyup)="adjust()" [(ngModel)]="verse.content"></ion-textarea>
+  </ion-item>
+
+  <button ion-button block clear (click)="createVerse()">Submit</button>
+
+
+</ion-content>

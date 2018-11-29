@@ -1,0 +1,29 @@
+              <ion-header>
+                <ion-toolbar color="primary">
+                  <ion-title left>Sermon List ...</ion-title>
+                    <ion-buttons end>
+                      <button ion-button icon-only>
+                        <ion-icon name="person"></ion-icon>
+                      </button>
+                    </ion-buttons>
+                    <ion-buttons end navPush="NotificationPage">
+                      <button ion-button icon-only>
+                        <ion-icon name="notifications" ></ion-icon>
+                      </button>
+                    </ion-buttons>
+                  </ion-toolbar>
+                </ion-header>
+
+                <ion-content class="mybackground">
+                  <ion-card class="divpadding" *ngFor="let sermon of sermonData | async"
+                      detail-push navPush="SermonPage" [navParams]="{sermon:sermon}">
+                      <p class="greetingstext"><strong> {{sermon.heading}}</strong></p>
+                      <hr/>
+                      <ion-thumbnail item-start>
+                      <img src="../../assets/imgs/love1.jpg">
+                      </ion-thumbnail>
+                      <p class="textleftwithoutpadding">{{sermon.content | slice:0:135}}...
+                      <button ion-button full round>Read Sermon</button>
+                      </p>
+                    </ion-card>
+                  </ion-content>

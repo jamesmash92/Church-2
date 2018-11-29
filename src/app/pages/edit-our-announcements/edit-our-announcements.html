@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Welcome {{announcements.heading}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label >Title Heading:</ion-label>
+    <ion-input [(ngModel)]="announcements.heading"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Authors Name:</ion-label>
+    <ion-input [(ngModel)]="announcements.authorname"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Date:</ion-label>
+    <ion-input [(ngModel)]="announcements.date1"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Time:</ion-label>
+    <ion-input [(ngModel)]="announcements.time"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Content:</ion-label>
+    <ion-label>Year:</ion-label>
+    <ion-input [(ngModel)]="announcements.content"></ion-input>
+  </ion-item>
+
+  <button ion-button block (click)="saveAnnouncements(announcements)">Save</button>
+<button ion-button block color="danger" (click)="removeAnnouncements(announcements)">Delete</button>
+
+
+</ion-content>

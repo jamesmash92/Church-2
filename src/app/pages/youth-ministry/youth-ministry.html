@@ -1,0 +1,321 @@
+<ion-header>
+  <ion-toolbar color="primary">
+  <ion-title>Youth Ministry</ion-title>
+  <ion-buttons end detail-push navPush="ProfilePage" [navParams]="{profile: profile}">
+    <button ion-button icon-only color="royal">
+      <ion-icon name="chatboxes">
+        <ion-badge item-end>10</ion-badge>
+      </ion-icon>
+    </button>
+  </ion-buttons>
+    <ion-buttons end detail-push navPush="ProfilePage" [navParams]="{profile: profile}">
+      <button ion-button icon-only color="royal">
+        <ion-icon name="person-add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  class="mybackground">
+    <ion-card>
+      <div>
+        <ion-thumbnail item-start>
+          <img src="../../assets/imgs/guitar.jpg"></ion-thumbnail>
+        </div>
+        <h2 class="headertext"> Hello! </h2>
+        <p class="textleft">We are delighted that you have found us! Coming from differing backgrounds our church family delights to unite in our love for Jesus and each other. We are thrilled that we can serve him together and welcome his presence into our worship and day to day lives.</p>
+    </ion-card>
+
+    <ion-card>
+      <ion-item color="partial" text-center >
+       <ion-icon name="arrow-dropleft" item-left></ion-icon> Verse of the Day <ion-icon item-right name="arrow-dropright"></ion-icon>
+      </ion-item>
+        <ion-slides>
+          <ion-slide *ngFor="let verse of (verseDataList | async)?.slice().reverse()"
+          detail-push navPush="VerseOfTheDayPage" [navParams]="{verse:verse}">
+          <ion-grid>
+            <ion-row color="partial">
+              <ion-col col-1><ion-icon name="sunny" item-left></ion-icon></ion-col>
+              <ion-col col-5><p class="paragraph"> Verse of the day</p> </ion-col>
+              <ion-col col-6> <p><strong>{{verse.date1}}</strong></p> </ion-col>
+            </ion-row>
+          </ion-grid>
+          <h2> {{verse.bibleverse}} </h2>
+          <p class="textleft"> {{verse.content}}</p>
+        </ion-slide>
+        </ion-slides>
+        </ion-card>
+
+
+
+
+
+    <ion-card>
+      <ion-segment [(ngModel)]="youth">
+
+          <ion-segment-button value="welcome">
+          Welcome!!
+          </ion-segment-button>
+
+          <ion-segment-button value="news">
+          Our News
+          </ion-segment-button>
+
+      </ion-segment>
+
+
+        <!-- The call button-->
+      <div [ngSwitch]="youth">
+        <ion-list *ngSwitchCase="'welcome'" navPush="OpendevotionPage">
+            <ion-item text-center color="partial"> Read our Sermons</ion-item>
+                <ion-slides>
+                  <ion-slide>
+                    <ion-row>
+                      <ion-col col-6>
+                        <div>
+                          <ion-thumbnail item-start>
+                            <img style="width: 100%"  src="../../assets/imgs/dating.jpg"></ion-thumbnail>
+                          </div>
+                          <p>Giving is an act of worship Part 1</p>
+                        </ion-col>
+
+                        <ion-col col-6>
+                          <div>
+                            <ion-thumbnail item-start>
+                              <img style="width: 100%"  src="../../assets/imgs/dating1.jpg"></ion-thumbnail>
+                            </div>
+                            <p>Let build the Online Outreach Center</p>
+                          </ion-col>
+                        </ion-row>
+                      </ion-slide>
+
+                      <ion-slide>
+                        <ion-row>
+                          <ion-col col-6>
+                            <div>
+                              <ion-thumbnail item-start>
+                                <img style="width: 100%"  src="../../assets/imgs/dating2.jpg"></ion-thumbnail>
+                              </div>
+                              <p>Allow God to love you; He is your Father</p>
+                            </ion-col>
+
+                            <ion-col col-6>
+                              <div>
+                                <ion-thumbnail item-start>
+                                  <img style="width: 100%"  src="../../assets/imgs/dating3.jpg"></ion-thumbnail>
+                                </div>
+                                <p>Eat my word every day </p>
+                              </ion-col>
+                            </ion-row>
+                          </ion-slide>
+
+                          <ion-slide>
+                            <ion-row>
+                              <ion-col col-6>
+                                <div>
+                                  <ion-thumbnail item-start>
+                                    <img style="width: 100%"  src="../../assets/imgs/dating4.jpg"></ion-thumbnail>
+                                  </div>
+                                  <p>Giving is an act of worship Part 1</p>
+                                </ion-col>
+
+                                <ion-col col-6>
+                                  <div>
+                                    <ion-thumbnail item-start>
+                                      <img style="width: 100%"  src="../../assets/imgs/love1.jpg"></ion-thumbnail>
+                                    </div>
+                                    <p>Let build the Online Outreach Center</p>
+                                  </ion-col>
+                                </ion-row>
+                              </ion-slide>
+                            </ion-slides>
+
+                            <ion-item color="partial" text-center>
+                            From Our Blog
+                            </ion-item>
+                            <ion-slides>
+                              <ion-slide>
+                                <ion-row>
+                                  <ion-col col-6>
+                                    <div>
+                                      <ion-thumbnail item-start>
+                                        <img style="width: 100%"  src="../../assets/imgs/love2.jpg"></ion-thumbnail>
+                                      </div>
+                                      <p>Giving is an act of worship Part 1</p>
+                                    </ion-col>
+
+                                    <ion-col col-6>
+                                      <div>
+                                        <ion-thumbnail item-start>
+                                          <img style="width: 100%"  src="../../assets/imgs/dating.jpg"></ion-thumbnail>
+                                        </div>
+                                        <p>Let build the Online Outreach Center</p>
+                                      </ion-col>
+                                    </ion-row>
+                                  </ion-slide>
+
+                                  <ion-slide>
+                                    <ion-row>
+                                      <ion-col col-6>
+                                        <div>
+                                          <ion-thumbnail item-start>
+                                            <img style="width: 100%"  src="../../assets/imgs/love1.jpg"></ion-thumbnail>
+                                          </div>
+                                          <p>Allow God to love you; He is your Father</p>
+                                        </ion-col>
+
+                                        <ion-col col-6>
+                                          <div>
+                                            <ion-thumbnail item-start>
+                                              <img style="width: 100%"  src="../../assets/imgs/love3.jpg"></ion-thumbnail>
+                                            </div>
+                                            <p>Eat my word every day </p>
+                                          </ion-col>
+                                        </ion-row>
+                                      </ion-slide>
+
+                                      <ion-slide>
+                                        <ion-row>
+                                          <ion-col col-6>
+                                            <div>
+                                              <ion-thumbnail item-start>
+                                                <img style="width: 100%"  src="../../assets/imgs/love2.jpg"></ion-thumbnail>
+                                              </div>
+                                              <p>Giving is an act of worship Part 1</p>
+                                            </ion-col>
+
+                                            <ion-col col-6>
+                                              <div>
+                                                <ion-thumbnail item-start>
+                                                  <img style="width: 100%"  src="../../assets/imgs/dating.jpg"></ion-thumbnail>
+                                                </div>
+                                                <p>Let build the Online Outreach Center</p>
+                                              </ion-col>
+                                            </ion-row>
+                                          </ion-slide>
+                                        </ion-slides>
+
+                                          <ion-item color="partial" text-center>
+                                          Watch our Video
+                                          </ion-item>
+                                          <ion-slides>
+                                            <ion-slide>
+                                              <ion-row>
+                                                <ion-col col-6>
+                                                  <div>
+                                                    <ion-thumbnail item-start>
+                                                      <img (click)="gotovideopage()" style="width: 100%"  src="../../assets/imgs/love2.jpg" ></ion-thumbnail>
+                                                    </div>
+                                                    <p>Giving is an act of worship Part 1</p>
+                                                      <button ion-button block (click)="gotovideopage()"> Play Video</button>
+                                                  </ion-col>
+
+                                                  <ion-col col-6>
+                                                    <div>
+                                                      <ion-thumbnail item-start>
+                                                        <img (click)="playVideo()" style="width: 100%"  src="../../assets/imgs/love3.jpg" ></ion-thumbnail>
+                                                      </div>
+                                                      <p>Let build the Online Outreach Center</p>
+                                                        <button ion-button block (click)="gotovideopage()"> Play Video</button>
+                                                    </ion-col>
+                                                  </ion-row>
+                                                </ion-slide>
+                                                <ion-slide>
+                                                  <ion-row>
+                                                    <ion-col col-6>
+                                                      <div>
+                                                        <ion-thumbnail item-start>
+                                                          <img (click)="playVideo()" style="width: 100%"  src="../../assets/imgs/dating1.jpg" ></ion-thumbnail>
+                                                        </div>
+                                                        <p>Giving is an act of worship Part 1</p>
+                                                          <button ion-button (click)="playVideo()"> Play Video</button>
+                                                      </ion-col>
+
+                                                      <ion-col col-6>
+                                                        <div>
+                                                          <ion-thumbnail item-start>
+                                                            <img (click)="playVideo()" style="width: 100%"  src="../../assets/imgs/dating.jpg" ></ion-thumbnail>
+                                                          </div>
+                                                          <p>Let build the Online Outreach Center</p>
+                                                            <button ion-button block (click)="playVideo()"> Play Video</button>
+                                                        </ion-col>
+                                                      </ion-row>
+                                                    </ion-slide>
+
+                                                    <ion-slide>
+                                                      <ion-row>
+                                                        <ion-col col-6>
+                                                          <div>
+                                                            <ion-thumbnail item-start>
+                                                              <img (click)="playVideo()" style="width: 100%"  src="../../assets/imgs/dating3.jpg" ></ion-thumbnail>
+                                                            </div>
+                                                            <p>Giving is an act of worship Part 1</p>
+                                                              <button ion-button (click)="playVideo()"> Play Video</button>
+                                                          </ion-col>
+
+                                                          <ion-col col-6>
+                                                            <div>
+                                                              <ion-thumbnail item-start>
+                                                                <img (click)="playVideo()" style="width: 100%"  src="../../assets/imgs/dating.jpg" ></ion-thumbnail>
+                                                              </div>
+                                                              <p>Let build the Online Outreach Center</p>
+                                                                <button ion-button block (click)="playVideo()"> Play Video</button>
+                                                            </ion-col>
+                                                          </ion-row>
+                                                        </ion-slide>
+                                                      </ion-slides>
+                                                    </ion-list>
+
+
+                    <ion-list *ngSwitchCase="'news'">
+
+                        <button ion-item (click)="gotothesermon()">
+                          <ion-thumbnail item-start>
+                            <img src="../../assets/imgs/love1.jpg"></ion-thumbnail>
+                            <h3 class="textleft">Do You Want What Others Have?</h3>
+                            <hr/>
+                            <div>
+                              <ion-icon item-left name="videocam"></ion-icon>
+                              <ion-icon class="iconpadding" item-center name="mic"></ion-icon>
+                              <ion-icon class="iconpadding" item-right name="cloud-download"></ion-icon></div>
+
+                        </button>
+                        <hr/>
+
+                        <button ion-item navPush="SermonPage">
+                          <ion-thumbnail item-start>
+                            <img src="../../assets/imgs/love2.jpg"></ion-thumbnail>
+                              <p class="textleft">God will give you life</p>
+                          <hr/>
+                          <div>
+                            <ion-icon item-left name="videocam"></ion-icon>
+                            <ion-icon class="iconpadding" item-center name="mic"></ion-icon>
+                            <ion-icon class="iconpadding" item-right name="cloud-download"></ion-icon></div>
+                        </button>
+                          <hr/>
+
+                        <button ion-item navPush="SermonPage">
+                          <ion-thumbnail item-start>
+                            <img src="../../assets/imgs/love3.jpg"></ion-thumbnail>
+                              <p class="textleft">I can do all things through Christ who gives us strength</p>
+                          <hr/>
+                          <div>
+                            <ion-icon item-left name="videocam"></ion-icon>
+                            <ion-icon class="iconpadding" item-center name="mic"></ion-icon>
+                            <ion-icon class="iconpadding" item-right name="cloud-download"></ion-icon></div>
+                        </button>
+                          <hr/>
+
+                        <button ion-item navPush="SermonPage">
+                            <p class="textleft">And this is the promise, that God will be with usall the time</p>
+                          <hr/>
+                          <div>
+                            <ion-icon item-left name="videocam"></ion-icon>
+                            <ion-icon class="iconpadding" item-center name="mic"></ion-icon>
+                            <ion-icon class="iconpadding" item-right name="cloud-download"></ion-icon></div>
+                        </button>
+                          <hr/>
+
+                      </ion-list>
+                    </div>
+                  </ion-card>

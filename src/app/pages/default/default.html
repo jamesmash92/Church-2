@@ -1,0 +1,186 @@
+          <ion-header>
+            <ion-toolbar color="mywhite">
+              <ion-buttons end>
+                <button ion-button icon-only (click)="doClick()">
+                  <ion-icon name="menu"></ion-icon>
+                </button>
+              </ion-buttons>
+
+                <ion-item class="item-avatar" start no-lines *ngFor="let profile of (profileData | async)?.slice().reverse()">
+                  <ion-avatar class="item-avatar" item-start>
+                    <img src="../../assets/imgs/mwicigi.jpg">
+                  </ion-avatar>
+
+                  <ion-icon>
+                      <ion-badge><h2>Hi, {{profile.firstname}}</h2></ion-badge>
+                  </ion-icon>
+                </ion-item>
+            </ion-toolbar>
+          </ion-header>
+
+
+        <ion-content class="mybackground">
+
+              <ion-thumbnail item-start>
+                <img src="../../assets/imgs/smile.jpg">
+              </ion-thumbnail>
+
+            <ion-card class="mycard">
+
+                <ion-segment [(ngModel)]="icons" color="secondary">
+                  <ion-segment-button class="myfab2 myblack" value="home">
+                  <ion-avatar class="myavatar fabbackground">
+                    <ion-icon name="home"></ion-icon>
+                  </ion-avatar>
+                  <h3>Home</h3>
+                </ion-segment-button>
+
+              <ion-segment-button class="myfab1" value="verse">
+                <ion-avatar class="myavatar  fabbackground">
+                <ion-icon name="bulb"></ion-icon>
+                </ion-avatar>
+                <h3>News</h3>
+              </ion-segment-button>
+
+
+            <ion-segment-button class="myfab" value="account">
+              <ion-avatar class="myavatar  fabbackground">
+              <ion-icon name="contact"></ion-icon>
+              </ion-avatar>
+              <h3>Account</h3>
+            </ion-segment-button>
+          </ion-segment>
+        </ion-card>
+
+
+        <ion-card class="myfabbackground slideheight">
+
+
+          <div [ngSwitch]="icons">
+            <ion-list *ngSwitchCase="'home'">
+              <ion-card>
+                <ion-item color="partial" text-center>
+                  Home
+                </ion-item>
+
+
+              <ion-slides loop="true" direction="vertical" slidesPerView="0">
+
+
+                <ion-slide *ngFor="let verse of (verseDataList  | async)?.slice().reverse()"
+                  detail-push navPush="VerseOfTheDayPage" [navParams]="{verse:verse}">
+
+                  <ion-list>
+                    <ion-item style="text-align:center">
+
+                        <img src="../../assets/imgs/smile.jpg">
+
+                      <h2> {{verse.bibleverse}}   <span>{{verse.date1}}</span><button ion-button clear item-end>View</button></h2>
+
+
+                    </ion-item>
+                  </ion-list>
+                  <hr/>
+              </ion-slide>
+
+            </ion-slides>
+          </ion-card>
+          </ion-list>
+
+
+
+
+                  <ion-list *ngSwitchCase="'verse'">
+
+                    <ion-card>
+                      <ion-item color="partial" text-center>
+                        News & Events
+                      </ion-item>
+                      <ion-slides loop="true" direction="vertical" slidesPerView="0">
+                        <ion-slide *ngFor="let announcements of (announcementsDataList | async)?.slice().reverse()" detail-push navPush="AnnouncementsPage" [navParams]="{announcements:announcements}">
+                          <ion-item text-center>
+                            <h2>{{announcements.heading}}</h2>
+                          </ion-item>
+                          <hr/>
+                          <div>
+                            <ion-thumbnail item-start>
+                              <img style="width: 100%"  src="../../assets/imgs/tgnm.png"></ion-thumbnail>
+                            </div>
+                            <ion-card-content class="mytextleft">
+                              <p>{{announcements.content | slice:0:119 }}</p>
+                            </ion-card-content>
+                            <ion-row>
+                              <ion-col>
+                                <button ion-button icon-left clear small color="danger">
+                                  <ion-icon name="thumbs-up"></ion-icon>
+                                  <div>12 Like</div>
+                                </button>
+                              </ion-col>
+                              <ion-col>
+                                <button ion-button clear small color="danger" icon-start>
+                                  <ion-icon name='heart'></ion-icon>
+                                  Love
+                                </button>
+                              </ion-col>
+                              <ion-col>
+                                <button ion-button icon-left clear small color="danger">
+                                  <ion-icon name="text"></ion-icon>
+                                  <div>4 Comments</div>
+                                </button>
+                              </ion-col>
+                            </ion-row>
+                          </ion-slide>
+                        </ion-slides>
+                      </ion-card>
+                    </ion-list>
+
+                    <ion-list *ngSwitchCase="'account'">
+                      <ion-card padding *ngFor="let profile of profileData | async">
+                        <ion-item class="ion-item-padding">
+                            <ion-thumbnail item-start>
+                            <img src="../../assets/imgs/mwicigi.jpg">
+                            </ion-thumbnail>
+                              <h5 class="fontsizedate"> {{profile.firstname}} {{profile.lastname}} </h5>
+                              <p class="fontsizedate">
+                              <span><ion-icon name="clock" color="primary"></ion-icon> 9:15PM</span></p>
+                              <p class="textleft">Welcome to The Good News Mission Setting page.  </p>
+                        </ion-item>
+
+                        <ion-list  class="textleft" color="light">
+
+                        <p>Follow the instructions in the tabs below</p>
+                      </ion-list>
+                        <hr/>
+                        <ion-item>
+                        <ion-grid padding>
+                              <ion-row>
+                                <ion-col>
+                                 <ion-icon class="iconprofile" name="list"></ion-icon>
+                                 <p class="labelfonts">Log</p>
+                                </ion-col>
+
+                                <ion-col navPush="ProfiledetailPage" [navParams]="{profile: profile}">
+                                  <ion-icon class="iconprofile" name="eye"></ion-icon>
+                                <p class="labelfonts">View Profile</p>
+                                  </ion-col>
+
+
+                                <ion-col navPush="EditprofilePage" [navParams]="{profile: profile}">
+                                  <ion-icon class="iconprofile" name="paper"></ion-icon>
+                                <p class="labelfonts">Edit</p>
+                                </ion-col>
+
+                                <ion-col>
+                                <ion-icon class="iconprofile" name="key"></ion-icon>
+                                 <p class="labelfonts">Password</p>
+                                </ion-col>
+                              </ion-row>
+                        </ion-grid>
+                      </ion-item>
+                      </ion-card>
+                      </ion-list>
+                  </div>
+
+                  </ion-card>
+
+                </ion-content>
