@@ -1,13 +1,26 @@
 import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
+
+import { IonicModule } from '@ionic/angular';
+
 import { VideosPage } from './videos';
 
+const routes: Routes = [
+  {
+    path: '',
+    component: VideosPage
+  }
+];
+
 @NgModule({
-  declarations: [
-    VideosPage,
-  ],
   imports: [
-    IonicPageModule.forChild(VideosPage),
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    RouterModule.forChild(routes)
   ],
+  declarations: [VideosPage]
 })
 export class VideosPageModule {}

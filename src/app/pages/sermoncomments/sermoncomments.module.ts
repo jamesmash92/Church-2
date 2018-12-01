@@ -1,13 +1,26 @@
 import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
+
+import { IonicModule } from '@ionic/angular';
+
 import { SermoncommentsPage } from './sermoncomments';
 
+const routes: Routes = [
+  {
+    path: '',
+    component: SermoncommentsPage
+  }
+];
+
 @NgModule({
-  declarations: [
-    SermoncommentsPage,
-  ],
   imports: [
-    IonicPageModule.forChild(SermoncommentsPage),
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    RouterModule.forChild(routes)
   ],
+  declarations: [SermoncommentsPage]
 })
 export class SermoncommentsPageModule {}

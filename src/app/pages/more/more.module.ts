@@ -1,13 +1,26 @@
 import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
+
+import { IonicModule } from '@ionic/angular';
+
 import { MorePage } from './more';
 
+const routes: Routes = [
+  {
+    path: '',
+    component: MorePage
+  }
+];
+
 @NgModule({
-  declarations: [
-    MorePage,
-  ],
   imports: [
-    IonicPageModule.forChild(MorePage),
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    RouterModule.forChild(routes)
   ],
+  declarations: [MorePage]
 })
 export class MorePageModule {}

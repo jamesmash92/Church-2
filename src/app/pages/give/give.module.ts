@@ -1,13 +1,26 @@
 import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
+
+import { IonicModule } from '@ionic/angular';
+
 import { GivePage } from './give';
 
+const routes: Routes = [
+  {
+    path: '',
+    component: GivePage
+  }
+];
+
 @NgModule({
-  declarations: [
-    GivePage,
-  ],
   imports: [
-    IonicPageModule.forChild(GivePage),
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    RouterModule.forChild(routes)
   ],
+  declarations: [GivePage]
 })
 export class GivePageModule {}

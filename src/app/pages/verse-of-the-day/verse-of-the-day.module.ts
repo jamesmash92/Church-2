@@ -1,13 +1,26 @@
 import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
+
+import { IonicModule } from '@ionic/angular';
+
 import { VerseOfTheDayPage } from './verse-of-the-day';
 
+const routes: Routes = [
+  {
+    path: '',
+    component: VerseOfTheDayPage
+  }
+];
+
 @NgModule({
-  declarations: [
-    VerseOfTheDayPage,
-  ],
   imports: [
-    IonicPageModule.forChild(VerseOfTheDayPage),
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    RouterModule.forChild(routes)
   ],
+  declarations: [VerseOfTheDayPage]
 })
 export class VerseOfTheDayPageModule {}

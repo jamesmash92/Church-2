@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from '@ionic/angular';
 import { AngularFireDatabase} from 'angularfire2/database';
 import { Blog } from '../../../environments/environment';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { MyBlogProvider } from '../../service/church.service';
 
 
@@ -21,18 +21,22 @@ export class ListOfOurBlogPage {
                private afDatabase: AngularFireDatabase) {
 
 
-                 {
-                     this.blogDataList = this.blogprovider
-                     .getBlog()
-                     .snapshotChanges()
-                     .map(
-                       changes => {
-                         return changes.map(c => ({
-                           key: c.payload.key, ...c.payload.val(),
-                         }));
-                       }
-                     );
-               }
-             }
+                 // {
+                    // this.blogprovider = this.blogprovider
+                     // .getBlog()
+                     // .snapshotChanges()
+                     // .map(
+                      // changes => {
+                         // return changes.map(c => ({
+                          // key: c.payload.key, ...c.payload.val(),
+                         // }));
+                       // }
+                    // );
+               // }
+            }
 
+
+  private newMethod() {
+    return this.blogDataList;
+  }
   }

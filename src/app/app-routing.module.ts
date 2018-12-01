@@ -6,6 +6,7 @@ const routes: Routes = [
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'about', loadChildren: './about/about.module#AboutPageModule' },
   { path: 'about-us', loadChildren: './about-us/about-us.module#AboutUsPageModule' },
+  // tslint:disable-next-line:max-line-length
   { path: 'add-my-devotios-to-database', loadChildren: './add-my-devotios-to-database/add-my-devotios-to-database.module#AddMyDevotiosToDatabasePageModule' },
   { path: 'add-our-announcements', loadChildren: './add-our-announcements/add-our-announcements.module#AddOurAnnouncementsPageModule' },
   { path: 'add-our-blog', loadChildren: './add-our-blog/add-our-blog.module#AddOurBlogPageModule' },

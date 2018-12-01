@@ -6,16 +6,16 @@ export const environment = {
   production: false,
 
     firebase: {
-    apiKey: 'AIzaSyAvn9R88v0rjvcz1lMiRARNh0wG4yqSCrk',
-    authDomain: 'thegoodnewsmission-96420.firebaseapp.com',
-    databaseURL: 'https://thegoodnewsmission-96420.firebaseio.com',
-    projectId: 'thegoodnewsmission-96420',
-    storageBucket: 'thegoodnewsmission-96420.appspot.com',
-    messagingSenderId: '97955503349',
+      apiKey: 'AIzaSyAvn9R88v0rjvcz1lMiRARNh0wG4yqSCrk',
+      authDomain: 'thegoodnewsmission-96420.firebaseapp.com',
+      databaseURL: 'https://thegoodnewsmission-96420.firebaseio.com',
+      projectId: 'thegoodnewsmission-96420',
+      storageBucket: 'thegoodnewsmission-96420.appspot.com',
+      messagingSenderId: '97955503349'
     }
   };
   export interface Blog {
-    key?: 'string';
+    key?: string;
     heading: 'string';
     authorname: 'string';
     date1: 'string';
@@ -23,7 +23,7 @@ export const environment = {
     content: 'string';
   }
   export interface Announcements {
-    key?: 'string';
+    key?: string;
     heading: 'string';
     authorname: 'string';
     date1: 'string';
@@ -32,64 +32,64 @@ export const environment = {
   }
   export interface Devotions {
     key?: string;
-    heading: string;
+    heading: 'string';
     authorname: string;
     date1: string;
-    time: string;
-    content: string;
+    time: 'string';
+    content: 'string';
   }
   export interface Events {
     key?: string;
-    heading: string;
-    authorname: string;
-    date1: string;
-    time: string;
-    content: string;
+    heading: 'string';
+    authorname: 'string';
+    date1: 'string';
+    time: 'string';
+    content: 'string';
   }
   export interface Myfiles {
     key?: string;
-    heading: string;
-    authorname: string;
-    date1: string;
-    time: string;
-    content: string;
+    heading: 'string';
+    authorname: 'string';
+    date1: 'string';
+    time: 'string';
+    content: 'string';
   }
   export interface Profile {
     key?: string;
-    username: string;
-    firstname: string;
-    lastname: string;
-    email: string;
-    year: string;
-    month: string;
-    day: string;
-    postaladdress: string;
-    poastalcode: string;
-    country: string;
-    town: string;
-    landmark: string;
+    username: 'string';
+    firstname: 'string';
+    lastname: 'string';
+    email: 'string';
+    year: 'string';
+    month: 'string';
+    day: 'string';
+    postaladdress: 'string';
+    poastalcode: 'string';
+    country: 'string';
+    town: 'string';
+    landmark: 'string';
   }
   export interface Sermon {
     key?: string;
-    heading: string;
-    authorname: string;
-    date1: string;
-    time: string;
-    content: string;
+    heading: 'string';
+    authorname: 'string';
+    date1: 'string';
+    time: 'string';
+    content: 'string';
   }
   export interface User {
     email: string;
-    password: string;
-    firstname: string;
-    lasttname: string;
-    username: string;
+    password: 'string';
+    firstname: 'string';
+    lasttname: 'string';
+    username: 'string';
 
   }
   export interface Verse {
     key?: string;
-    bibleverse: string;
-    date1: string;
-    content: string;
+    bibleverse: 'string';
+    date1: 'string';
+    content: 'string';
   }
 
 

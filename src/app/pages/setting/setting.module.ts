@@ -1,13 +1,26 @@
 import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
+
+import { IonicModule } from '@ionic/angular';
+
 import { SettingPage } from './setting';
 
+const routes: Routes = [
+  {
+    path: '',
+    component: SettingPage
+  }
+];
+
 @NgModule({
-  declarations: [
-    SettingPage,
-  ],
   imports: [
-    IonicPageModule.forChild(SettingPage),
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    RouterModule.forChild(routes)
   ],
+  declarations: [SettingPage]
 })
 export class SettingPageModule {}

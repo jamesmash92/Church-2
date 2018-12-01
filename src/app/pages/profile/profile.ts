@@ -4,6 +4,7 @@ import { NavController, NavParams } from '@ionic/angular';
 import {Profile} from '../../../environments/environment';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {AngularFireDatabase} from 'angularfire2/database';
+import { take } from 'rxjs/operators';
 
 
 @Component({
@@ -20,7 +21,7 @@ export class ProfilePage {
   }
 
   createprofile() {
-    this.afauth.authState.take(1).subscribe(auth => {
+    this.afauth.authState.pipe(take(1)).subscribe(auth => {
       this.afDatabase.object(`profile/${auth.uid}`).set(this.profile)
       .then(() => this.navCtrl.navigateForward('ProfiledetailPage'));
     });

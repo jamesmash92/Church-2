@@ -4,6 +4,7 @@ import {Sermon} from '../../../environments/environment';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {AngularFireDatabase} from 'angularfire2/database';
 import { Directive, HostListener, ElementRef } from '@angular/core';
+import { take } from 'rxjs/operators';
 
 
 
@@ -48,7 +49,7 @@ export class PostSermonPage {
 
 
         createsermon() {
-            this.afauth.authState.take(1).subscribe(auth => {
+            this.afauth.authState.pipe(take(1)).subscribe(auth => {
             this.afDatabase.list(`sermon`).push(this.sermon)
             .then(() => this.navCtrl.navigateForward('ListOfSermonsInSettingsPage'));
           });

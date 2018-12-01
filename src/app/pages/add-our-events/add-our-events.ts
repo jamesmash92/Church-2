@@ -5,6 +5,7 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {ListOfOurEventsPage } from '../list-of-our-events/list-of-our-events';
 import { Directive, HostListener, ElementRef } from '@angular/core';
+import { take } from 'rxjs/operators';
 
 
 @Component({
@@ -48,7 +49,7 @@ export class AddOurEventsPage {
 
 
         createEvents() {
-            this.afauth.authState.take(1).subscribe(auth => {
+            this.afauth.authState.pipe(take(1)).subscribe(auth => {
             this.afDatabase.list(`events`).push(this.events)
             .then(() => this.navCtrl.navigateForward('ListOfOurEventsPage'));
           });

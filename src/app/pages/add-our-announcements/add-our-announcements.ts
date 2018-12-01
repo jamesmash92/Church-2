@@ -6,6 +6,7 @@ import {AngularFireDatabase} from 'angularfire2/database';
 import {ListOfOurAnnouncementsPage } from '../list-of-our-announcements/list-of-our-announcements';
 import { Directive, HostListener, ElementRef } from '@angular/core';
 import { directiveInject } from '@angular/core/src/render3';
+import { take } from 'rxjs/operators';
 
 
 @Component({
@@ -48,7 +49,7 @@ export class AddOurAnnouncementsPage {
 
 
         createAnnouncements() {
-            this.afauth.authState.take(1).subscribe(auth => {
+            this.afauth.authState.pipe(take(1)).subscribe(auth => {
             this.afDatabase.list(`announcements`).push(this.announcements)
             .then(() => this.navCtrl.navigateForward('ListOfOurAnnouncementsPage'));
           });

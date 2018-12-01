@@ -5,6 +5,7 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {ListOfTheVerseOfTheDayPage } from '../list-of-the-verse-of-the-day/list-of-the-verse-of-the-day';
 import { Directive, HostListener, ElementRef } from '@angular/core';
+import { take } from 'rxjs/operators';
 
 
 @Component({
@@ -48,7 +49,7 @@ export class AddVerseOfTheDayPage {
 
 
         createVerse() {
-            this.afauth.authState.take(1).subscribe(auth => {
+            this.afauth.authState.pipe(take(1)).subscribe(auth => {
             this.afDatabase.list(`verse`).push(this.verse)
             .then(() => this.navCtrl.navigateForward('ListOfTheVerseOfTheDayPage'));
           });

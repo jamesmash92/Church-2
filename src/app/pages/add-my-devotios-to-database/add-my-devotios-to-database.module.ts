@@ -1,13 +1,26 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
+
 import { IonicModule } from '@ionic/angular';
-import { AddMyDevotiosToDatabasePage } from './add-my-devotios-to-database';
+
+import { AddMydevotiosToDatabasePage } from './add-my-devotios-to-database';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: AddMydevotiosToDatabasePage
+  }
+];
 
 @NgModule({
-  declarations: [
-    AddMyDevotiosToDatabasePage,
-  ],
   imports: [
-    IonicModule.call(AddMyDevotiosToDatabasePage),
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    RouterModule.forChild(routes)
   ],
+  declarations: [AddMydevotiosToDatabasePage]
 })
-export class AddMyDevotiosToDatabasePageModule {}
+export class AddMydevotiosToDatabasePageModule {}

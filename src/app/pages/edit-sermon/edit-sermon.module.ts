@@ -1,13 +1,26 @@
 import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
+
+import { IonicModule } from '@ionic/angular';
+
 import { EditSermonPage } from './edit-sermon';
 
+const routes: Routes = [
+  {
+    path: '',
+    component: EditSermonPage
+  }
+];
+
 @NgModule({
-  declarations: [
-    EditSermonPage,
-  ],
   imports: [
-    IonicPageModule.forChild(EditSermonPage),
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    RouterModule.forChild(routes)
   ],
+  declarations: [EditSermonPage]
 })
 export class EditSermonPageModule {}

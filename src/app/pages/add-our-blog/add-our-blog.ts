@@ -5,6 +5,7 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {ListOfOurBlogPage } from '../list-of-our-blog//list-of-our-blog';
 import { Directive, HostListener, ElementRef } from '@angular/core';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'page-add-our-blog',
@@ -47,7 +48,7 @@ export class AddOurBlogPage {
 
 
             createBlog() {
-                this.afauth.authState.take(1).subscribe(auth => {
+                this.afauth.authState.pipe(take(1)).subscribe(auth => {
                 this.afDatabase.list(`blog`).push(this.blog)
                 .then(() => this.navCtrl.navigateForward('ListOfOurBlogPage'));
               });

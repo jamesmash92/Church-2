@@ -1,13 +1,26 @@
 import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
+
+import { IonicModule } from '@ionic/angular';
+
 import { DefaultPage } from './default';
 
+const routes: Routes = [
+  {
+    path: '',
+    component: DefaultPage
+  }
+];
+
 @NgModule({
-  declarations: [
-    DefaultPage,
-  ],
   imports: [
-    IonicPageModule.forChild(DefaultPage),
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    RouterModule.forChild(routes)
   ],
+  declarations: [DefaultPage]
 })
 export class DefaultPageModule {}
