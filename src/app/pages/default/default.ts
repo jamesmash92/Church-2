@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalController, NavController, NavParams, ToastController } from '@ionic/angular';
-import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase} from 'angularfire2/database';
 import { Profile } from '../../../environments/environment';

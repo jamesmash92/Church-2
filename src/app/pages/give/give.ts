@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from '@ionic/angular';
-import { PayPal, PayPalPayment, PayPalConfiguration } from '@ionic-native/paypal';
+import { PayPal, PayPalPayment, PayPalConfiguration } from '@ionic-native/paypal/ngx';
 
 /**
  * Generated class for the GivePage page.

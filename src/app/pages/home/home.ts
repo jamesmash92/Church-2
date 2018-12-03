@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalController, NavController, NavParams, ToastController } from '@ionic/angular';
-import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase} from 'angularfire2/database';
 import { Profile } from '../../../environments/environment';
@@ -21,7 +21,7 @@ import { Announcements } from '../../../environments/environment';
 import { MyAnnouncementsProvider } from '../../service/church.service';
 import { Verse } from '../../../environments/environment';
 import { MyVerseProvider } from '../../service/church.service';
-
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -45,6 +45,7 @@ export class HomePage {
               private toast: ToastController,
               private profile: HomeProvider,
               private sermon: SermonProvider,
+              private route: ActivatedRoute,
               private blogprovider: MyBlogProvider,
               private eventsprovider: MyEventsProvider,
               private verseprovider: MyVerseProvider,
@@ -154,11 +155,11 @@ export class HomePage {
   }
 
   editprofile() {
-    this.navCtrl.navigateForward('ProfilePage');
+    this.router.navigateByUrl('ProfilePage');
   }
 
   gotovideopage() {
-    this.navCtrl.navigateForward('VideosPage');
+    this.router.navigateByUrl('VideosPage');
   }
 
 

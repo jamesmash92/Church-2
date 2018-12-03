@@ -8,7 +8,7 @@
                     </ion-icon>
                   </button>
                 </ion-buttons>
-                <ion-buttons end detail-push navPush="DefaultPage" [navParams]="{default: default}">
+                <ion-buttons end detail-push navPush="DefaultPage" [root]="{default: default}">
                   <button ion-button icon-only color="royal">
                     <ion-icon name="person-add"></ion-icon>
                   </button>
@@ -43,7 +43,7 @@
                   </ion-item>
                     <ion-slides>
                       <ion-slide *ngFor="let verse of (verseDataList  | async)?.slice().reverse()"
-                        detail-push navPush="VerseOfTheDayPage" [navParams]="{verse:verse}">
+                        detail-push navPush="VerseOfTheDayPage" [root]="{verse:verse}">
                         <ion-grid>
                           <ion-row color="partial">
                             <ion-col col-1><ion-icon name="sunny" item-left></ion-icon></ion-col>
@@ -63,7 +63,7 @@
                   </ion-item>
                   <ion-slides>
                     <ion-slide *ngFor="let sermon of (sermonData | async)?.slice().reverse()"
-                    detail-push navPush="SermonPage" [navParams]="{sermon:sermon}">
+                    detail-push navPush="SermonPage" [root]="{sermon:sermon}">
                     <ion-row>
                       <ion-col class="textleft">
                         <div>
@@ -166,7 +166,7 @@
                 </ion-item>
                 <ion-card>
                   <ion-slides>
-                    <ion-slide *ngFor="let announcements of (announcementsDataList | async)?.slice().reverse()" detail-push navPush="AnnouncementsPage" [navParams]="{announcements:announcements}">
+                    <ion-slide *ngFor="let announcements of (announcementsDataList | async)?.slice().reverse()" detail-push navPush="AnnouncementsPage" [root]="{announcements:announcements}">
                       <ion-item text-center>
                         <h2>{{announcements.heading}}</h2>
                       </ion-item>
@@ -208,7 +208,7 @@
                      <ion-icon name="arrow-dropleft" item-left></ion-icon> Read Our Blogs <ion-icon item-right name="arrow-dropright"></ion-icon>
                     </ion-item>
                     <ion-slides>
-                      <ion-slide *ngFor="let blog of (blogDataList | async)?.slice().reverse()" detail-push navPush="BlogPage" [navParams]="{blog:blog}">
+                      <ion-slide *ngFor="let blog of (blogDataList | async)?.slice().reverse()" detail-push navPush="BlogPage" [root]="{blog:blog}">
                         <ion-row>
                           <ion-col class="textleft">
                             <div>
@@ -361,7 +361,7 @@
                                     <ion-card-header text-center> Our Events</ion-card-header>
                                     <hr/>
                                     <ion-slides>
-                                      <ion-slide col-6 *ngFor="let events of (eventsDataList | async)?.slice().reverse()" detail-push navPush="EventsPage" [navParams]="{events:events}">
+                                      <ion-slide col-6 *ngFor="let events of (eventsDataList | async)?.slice().reverse()" detail-push navPush="EventsPage" [root]="{events:events}">
                                           <ion-row>
                                             <ion-col class="textleft">
                                               <div>

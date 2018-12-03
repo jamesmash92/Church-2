@@ -14,14 +14,14 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireStorageModule} from 'angularfire2/storage';
 import { HomeProvider } from './service/church.service';
 import { ToastProvider } from './service/church.service';
-import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { HomePageModule } from './pages/home/home.module';
 import { PlansPageModule } from './pages/plans/plans.module';
 import { MorePageModule } from './pages/more/more.module';
 import { ReadPageModule } from './pages/read/read.module';
 import { SettingPageModule } from './pages/setting/setting.module';
-import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
-import { PayPal, PayPalPayment, PayPalConfiguration } from '@ionic-native/paypal';
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
+import { PayPal, PayPalPayment, PayPalConfiguration } from '@ionic-native/paypal/ngx';
 import { SermonProvider } from './service/church.service';
 import { MyDevotionsProvider } from './service/church.service';
 import { MyEventsProvider } from './service/church.service';
@@ -33,6 +33,7 @@ import { MyVerseProvider } from './service/church.service';
 @NgModule({
   declarations: [
     AppComponent,
+
 
 
   ],
@@ -61,16 +62,9 @@ import { MyVerseProvider } from './service/church.service';
     {provide: ErrorHandler, useClass: SplashScreen },
     {provide: ErrorHandler, useClass: ErrorHandler },
     HomeProvider,
-    ToastProvider,
     InAppBrowser,
     YoutubeVideoPlayer,
     PayPal,
-    SermonProvider,
-    MyDevotionsProvider,
-    MyEventsProvider,
-    MyBlogProvider,
-    MyAnnouncementsProvider,
-    MyVerseProvider,
 
   ]
 })
