@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ModalController, NavController, NavParams, ToastController } from '@ionic/angular';
+import { ModalController, NavController, NavParams, ToastController, Input } from '@ionic/angular';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase} from 'angularfire2/database';
@@ -21,7 +21,7 @@ import { Announcements } from '../../../environments/environment';
 import { MyAnnouncementsProvider } from '../../service/church.service';
 import { Verse } from '../../../environments/environment';
 import { MyVerseProvider } from '../../service/church.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, } from '@angular/router';
 
 
 @Component({
@@ -30,6 +30,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomePage {
   [x: string]: any;
+
+
 
   profileData: Observable<Profile[]>;
   eventsDataList: Observable<Events[]>;

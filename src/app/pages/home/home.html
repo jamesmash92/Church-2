@@ -8,11 +8,11 @@
                     </ion-icon>
                   </button>
                 </ion-buttons>
-                <ion-buttons end detail-push navPush="DefaultPage" [root]="{default: default}">
+                <!-- <ion-buttons end detail-push navPush="DefaultPage" [root]="{default: default}">
                   <button ion-button icon-only color="royal">
                     <ion-icon name="person-add"></ion-icon>
                   </button>
-                </ion-buttons>
+                </ion-buttons> -->
             </ion-toolbar>
           </ion-header>
 
@@ -43,7 +43,7 @@
                   </ion-item>
                     <ion-slides>
                       <ion-slide *ngFor="let verse of (verseDataList  | async)?.slice().reverse()"
-                        detail-push navPush="VerseOfTheDayPage" [root]="{verse:verse}">
+                        detail-push navPush="VerseOfTheDayPage">
                         <ion-grid>
                           <ion-row color="partial">
                             <ion-col col-1><ion-icon name="sunny" item-left></ion-icon></ion-col>
@@ -63,7 +63,7 @@
                   </ion-item>
                   <ion-slides>
                     <ion-slide *ngFor="let sermon of (sermonData | async)?.slice().reverse()"
-                    detail-push navPush="SermonPage" [root]="{sermon:sermon}">
+                    detail-push navPush="SermonPage">
                     <ion-row>
                       <ion-col class="textleft">
                         <div>
@@ -166,7 +166,7 @@
                 </ion-item>
                 <ion-card>
                   <ion-slides>
-                    <ion-slide *ngFor="let announcements of (announcementsDataList | async)?.slice().reverse()" detail-push navPush="AnnouncementsPage" [root]="{announcements:announcements}">
+                    <ion-slide *ngFor="let announcements of announcementsDataList">
                       <ion-item text-center>
                         <h2>{{announcements.heading}}</h2>
                       </ion-item>
@@ -208,7 +208,7 @@
                      <ion-icon name="arrow-dropleft" item-left></ion-icon> Read Our Blogs <ion-icon item-right name="arrow-dropright"></ion-icon>
                     </ion-item>
                     <ion-slides>
-                      <ion-slide *ngFor="let blog of (blogDataList | async)?.slice().reverse()" detail-push navPush="BlogPage" [root]="{blog:blog}">
+                      <ion-slide *ngFor="let blog of (blogDataList | async)?.slice().reverse()" detail-push navPush="BlogPage">
                         <ion-row>
                           <ion-col class="textleft">
                             <div>
@@ -284,94 +284,7 @@
                       </ion-row>
                     </ion-card>
 
-                      <ion-card >
-                        <ion-item color="partial" text-center>
-                          Watch our Video
-                        </ion-item>
-                        <ion-slides>
-                          <ion-slide>
-                            <ion-row>
-                              <ion-col col-6>
-                                <div>
-                                  <ion-thumbnail item-start>
-                                    <img (click)="gotovideopage()" style="width: 100%"  src="../../assets/imgs/love2.jpg" ></ion-thumbnail>
-                                  </div>
-                                  <p>Giving is an act of worship Part 1</p>
-                                  <button ion-button block (click)="gotovideopage()"> Play Video</button>
-                                </ion-col>
 
-                                <ion-col col-6>
-                                  <div>
-                                    <ion-thumbnail item-start>
-                                      <img (click)="playVideo()" style="width: 100%"  src="../../assets/imgs/love3.jpg" ></ion-thumbnail>
-                                    </div>
-                                    <p>Let build the Online Outreach Center</p>
-                                    <button ion-button block (click)="gotovideopage()"> Play Video</button>
-                                  </ion-col>
-                                </ion-row>
-                              </ion-slide>
-                              <ion-slide>
-                                <ion-row>
-                                  <ion-col col-6>
-                                    <div>
-                                      <ion-thumbnail item-start>
-                                        <img (click)="playVideo()" style="width: 100%"  src="../../assets/imgs/dating1.jpg" ></ion-thumbnail>
-                                      </div>
-                                      <p>Giving is an act of worship Part 1</p>
-                                      <button ion-button (click)="playVideo()"> Play Video</button>
-                                    </ion-col>
-
-                                    <ion-col col-6>
-                                      <div>
-                                        <ion-thumbnail item-start>
-                                          <img (click)="playVideo()" style="width: 100%"  src="../../assets/imgs/dating.jpg" ></ion-thumbnail>
-                                        </div>
-                                        <p>Let build the Online Outreach Center</p>
-                                        <button ion-button block (click)="playVideo()"> Play Video</button>
-                                      </ion-col>
-                                    </ion-row>
-                                  </ion-slide>
-
-                                  <ion-slide>
-                                    <ion-row>
-                                      <ion-col col-6>
-                                        <div>
-                                          <ion-thumbnail item-start>
-                                            <img (click)="playVideo()" style="width: 100%"  src="../../assets/imgs/dating3.jpg" ></ion-thumbnail>
-                                          </div>
-                                          <p>Giving is an act of worship Part 1</p>
-                                          <button ion-button (click)="playVideo()"> Play Video</button>
-                                        </ion-col>
-
-                                        <ion-col col-6>
-                                          <div>
-                                            <ion-thumbnail item-start>
-                                              <img (click)="playVideo()" style="width: 100%"  src="../../assets/imgs/dating.jpg" ></ion-thumbnail>
-                                            </div>
-                                            <p>Let build the Online Outreach Center</p>
-                                            <button ion-button block (click)="playVideo()"> Play Video</button>
-                                          </ion-col>
-                                        </ion-row>
-                                      </ion-slide>
-                                    </ion-slides>
-                                  </ion-card>
-
-
-                                  <ion-card>
-                                    <ion-card-header text-center> Our Events</ion-card-header>
-                                    <hr/>
-                                    <ion-slides>
-                                      <ion-slide col-6 *ngFor="let events of (eventsDataList | async)?.slice().reverse()" detail-push navPush="EventsPage" [root]="{events:events}">
-                                          <ion-row>
-                                            <ion-col class="textleft">
-                                              <div>
-                                                <ion-thumbnail item-start>
-                                                  <img style="width: 100%"  src="../../assets/imgs/dating3.jpg"></ion-thumbnail>
-                                                </div>
-                                                <p>{{events.heading}}</p>
-                                              </ion-col>
-                                            </ion-row>
-                                          </ion-slide>
-                                        </ion-slides>
-                                      </ion-card>
+                                 
                                     </ion-content>
+                                    
